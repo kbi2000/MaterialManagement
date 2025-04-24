@@ -1,0 +1,267 @@
+<div ng-show="true" ng-controller="ConfigurationController">
+    <top-bar></top-bar>
+       <div class="container">
+           <div class="header">
+               <h2>All Items <span class="count">(1142)</span></h2>
+               <div class="actions">
+                   <div class="search-box-main-page">
+                       <i class="fas fa-search"></i>
+                       <input type="text" placeholder="Search in Item">
+                   </div>
+                   <button class="new-vendor"><i class="fas fa-plus"></i> New Item</button>
+                   <div ng-controller="ConfigurationController" class="dropdown-wrapper">
+                       <!-- Trigger Button -->
+                       <button class="more-options" ng-click="toggleDropdown($event)">⋯</button>
+                     
+                       <!-- Dropdown Menu -->
+                       <div class="dropdown-menu" ng-show="showDropdown">
+                         <ul>
+                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">csv</span> <span class="view-more-name">Export to CSV</span> </a></li> 
+                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Items</span> </a></li>
+                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
+                             download
+                             </span><span class="view-more-name">Download Import Format</span></a></li>
+                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
+                             download
+                             </span> <span class="view-more-name"> Current View Export</span></a></li>
+                             
+                             
+                         </ul>
+                       </div>
+                     </div>
+                             </div>
+           </div>
+       </div>
+       <div class="filter-container">
+           <span class="filter-label">Quick Filters :</span>
+           
+           <button class="filter-button">Recently Added</button>
+           <button class="filter-button">Oldest</button>
+           <!-- <button class="filter-button">Contract to be expired</button>
+           <button class="filter-button">To be expired</button>
+           <button class="filter-button">Missing Details</button>
+           <button class="filter-button">Missing GSTN</button> -->
+       
+           <span class="filter-icon" ng-click="toggleFilterPanel()"><span class="material-symbols-outlined">
+               filter_alt
+               </span></span>
+           <a href="#" class="clear-all">Clear All</a>
+       </div>
+       <!-- table -->
+        
+       <div class="tablebody">
+       
+         <div class="sidebar-table">
+           <a href="#">ALL</a>
+           <a href="#">A</a>
+           <a href="#">B</a>
+           <a href="#">C</a>
+           <a href="#">D</a>
+           <a href="#">E</a>
+           <a href="#">F</a>
+           <a href="#">G</a>
+           <a href="#">H</a>
+           <a href="#">I</a>
+           <a href="#">J</a>
+           <a href="#">K</a>
+           <a href="#">L</a>
+           <a href="#">M</a>
+           <a href="#">N</a>
+           <a href="#">O</a>
+           <a href="#">P</a>
+           <a href="#">Q</a>
+           <a href="#">R</a>
+           <a href="#">S</a>
+           <a href="#">T</a>
+           <a href="#">U</a>
+           <a href="#">V</a>
+           <a href="#">W</a>
+           <a href="#">X</a>
+           <a href="#">Y</a>
+           <a href="#">Z</a>
+         </div>
+       
+       <!-- Table Container -->
+       <div class="additem-table-wrapper">
+         <div class="additem-table">
+           <!-- Header Row -->
+           <div class="additem-row additem-header">
+             <div class="additem-cell additem-checkbox"><input type="checkbox" /></div>
+             <div class="additem-cell"> 
+               <span>Item Name</span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell"> 
+               <span> 
+                 Item Category
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+               
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Item code
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span> 
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Item type
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Perishable
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Unit of measure
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Preferred Vendor
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Purchase Price
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell">
+               <span> 
+                Sale Price
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+               
+             </div>
+             <div class="additem-cell">
+               <span> 
+                HSN
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="additem-cell">
+               
+               <span> 
+                Tax Code
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+         
+             </div>
+             <div class="additem-cell">
+               <span> 
+                GST%
+               </span>
+               <span>
+                 <!-- <i class="fa fa-arrow-down" aria-hidden="true"></i> -->
+               </span>
+             </div>
+             <!-- <div class="additem-cell">Current Status</div> -->
+             
+           </div>
+       
+           <!-- Data Row Example -->
+           <div class="additem-row">
+             <div class="additem-cell additem-checkbox"><input type="checkbox" /></div>
+             <div class="additem-cell" style="color:#0078d4 ;"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
+             <div class="additem-cell"><span class="text-wrap">Equipment</span></div>
+             <div class="additem-cell"><span class="text-wrap">45</span></div>
+             <div class="additem-cell"><span class="text-wrap">equipment</span></div>
+             <div class="additem-cell"><span class="text-wrap">Yes</span></div>
+             <div class="additem-cell"><span class="text-wrap">Kg</span></div>
+             <div class="additem-cell"><span class="text-wrap">Purchase</span></div>
+             <div class="additem-cell"><span class="text-wrap">873513</span></div>
+             <div class="additem-cell"><span class="text-wrap">9196</span></div>
+             <div class="additem-cell"><span class="text-wrap">8122R</span></div>
+             <div class="additem-cell"><span class="text-wrap">Test</span></div>
+             <div class="additem-cell"><span class="text-wrap">04</span></div>
+             <!-- <div class="additem-cell"><span class="vendor-status active">Active</span></div> -->
+           </div>
+          
+           <!-- You can repeat the .vendor-row above for each vendor -->
+         </div>
+       </div>
+         <div class="filter-panel-container" ng-show="isFilterPanelOpen">
+               <div class="filter-panel-header">
+                 <div class="filter-panel-title">
+                   <span style="margin-right: 8px;" class="material-symbols-outlined filter-fill-icon">
+                       filter_alt
+                       </span>
+                   Filters
+                 </div>
+                 <div class="filter-panel-close">
+                   <i class="fas fa-times"></i>
+                 </div>
+               </div>
+           
+       <div class="main-filter-panel-section" >
+           <div class="filter-panel-section">
+               <h4>DEMOGRAPHICS</h4>
+               <label class="filter-panel-label" for="location">Location</label>
+               <select class="filter-panel-select" id="location">
+                 <option>Select State</option>
+               </select>
+             </div>
+         
+             <div class="filter-panel-section">
+               <h4>SYSTEM STATUS</h4>
+               <label class="filter-panel-label" for="current-status">Current Status</label>
+               <select class="filter-panel-select" id="current-status">
+                 <option>Select Current Status</option>
+               </select>
+         
+               <label class="filter-panel-label" for="blacklisted-status">Blacklisted Status</label>
+               <select class="filter-panel-select" id="blacklisted-status">
+                 <option>Select Blacklisted Status</option>
+               </select>
+             </div>
+         
+             <div class="filter-panel-section">
+               <h4>CONTRACT EXPIRY DATE RANGE</h4>
+               <div class="filter-panel-date-row">
+                 <div class="filter-panel-date-column">
+                   <label class="filter-panel-label" for="start-date">Start Date</label>
+                   <input class="filter-panel-input" type="text" id="start-date" placeholder="dd/mm/yyyy" />
+                 </div>
+                 <div class="filter-panel-date-column">
+                   <label class="filter-panel-label" for="end-date">End Date</label>
+                   <input class="filter-panel-input" type="text" id="end-date" placeholder="dd/mm/yyyy" />
+                 </div>
+               </div>
+             </div>
+             
+       </div>
+           
+         </div>
+       </div>
+   
+   </div>

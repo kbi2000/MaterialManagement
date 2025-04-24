@@ -1,0 +1,401 @@
+<div >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">New Menu Item</div>
+          <div class="ssa-actions">
+            <button class="ssa-btn ssa-btn-cancel">Cancel</button>
+            <button class="ssa-btn ssa-btn-save">
+              <span class="material-symbols-outlined">
+                  save
+                  </span> Save
+            </button>
+            
+          </div>
+      </div>
+      <div  ng-controller="ConfigurationController">
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Menu Information</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div>
+                   
+             
+              <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="vendor-card-wrapper">
+                  <div class="vendor-section-header">Menu Item Details</div>
+                  <div class="vendor-grid-item menu-item-grid">
+                   
+                   
+                    <div class="vendor-input-wrapper">
+                      <label>Menu Item Name</label>
+                      <input type="text" value="Milk" />
+                    </div>
+                    <div class="vendor-input-wrapper">
+                      <label>Outlet Name</label>
+                      <select>
+                        <option>YES</option>
+                        <option>NO</option>
+                      </select>                    </div>
+                    <div class="vendor-input-wrapper">
+                      <label>Item Code</label>
+                      <input type="text" value="10" />
+                    </div>
+                    <div class="vendor-input-wrapper">
+                      <label>Catgeory</label>
+                      <select>
+                        <option>veg</option>
+                        <option>non-veg</option>
+                      </select>
+                    </div>
+                    <div class="vendor-input-wrapper">
+                      <label>Selling Price</label>
+                      <input type="text" value="" />
+                    </div>
+                    <div class="vendor-input-wrapper">
+                      <label>Tax Code</label>
+                      <input type="text" value="23" />
+                    </div>
+                  
+                  </div>
+              
+                  <!-- <div class="vendor-section-header">Vendor Details</div>
+                  <div class="vendor-address-grid">
+                    <div class="vendor-input-wrapper">
+                      <label>Preferred Vendor Name</label>
+                      <input type="text" value=" Vijaya Health Centre," />
+                    </div>
+                    <div class="vendor-input-wrapper">
+                      <label>Purchase Price</label>
+                      <input type="text" value="7000" />
+                    </div>
+                  </div>
+                  <div class="vendor-final-row">
+                   
+                   
+                  </div> -->
+                </div>
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'vendor'">
+              <div class="items-upper">
+                  <div class="all-items-header-container">
+                      <div class="all-items-left-section">
+                        <span class="all-items-title">All Items <span class="all-items-count">(3)</span></span>
+                      </div>
+                      <div class="all-items-right-section">
+                        <div class="all-items-search-box">
+                          <i class="fas fa-search all-items-search-icon"></i>
+                          <input type="text" class="all-items-input" placeholder="Search in Items">
+                        </div>
+                        <button class="all-items-button all-items-new" ng-click="showNewItemDialog = true">
+                          <i class="fas fa-plus"></i> New Item
+                        </button>
+                        <!-- <div class="new-item-dialog" ng-if="fals">
+                          <div class="dialog-content">
+                            <h3>Add New Item</h3>
+                
+                            <button ng-click="showNewItemDialog = false">Close</button>
+                          </div>
+                        </div> -->
+                        <div  class="custom-modal-overlay" id="customItemModal"  ng-show="showNewItemDialog">
+                          <div class="custom-modal-box">
+                            <h2 class="custom-modal-title">ADD ITEM</h2>
+                        
+                            <div class="custom-modal-body">
+                              <!-- Item List Section -->
+                              <div class="custom-item-list">
+                                <div class="custom-item-header-row">
+                                  <div class="custom-item-heading">ITEMS LIST</div>
+                                  <div class="custom-item-search-container">
+                                    <i class="fas fa-search custom-item-search-icon"></i>
+                                    <input
+                                      type="text"
+                                      class="custom-item-search-input"
+                                      placeholder="Search by Item name, HSN, Category etc..."
+                                      ng-model="searchItem"
+                                    />
+                                  </div>
+                                </div>
+                        
+                                <div class="table-container select-item-list">
+                                  <div class="vendor-item-list-table-wrapper">
+                                    <div class="vendor-item-list-table">
+                                      <!-- Header Row -->
+                                      <div class="vendor-item-list-row vendor-item-list-header">
+                                        <div class="vendor-item-list-cell vendor-item-list-checkbox"><input type="checkbox" /></div>
+                                        <div class="vendor-item-list-cell"> 
+                                          <span>Item Name</span>
+                                          <span>
+                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                          </span>
+                                        </div>
+                                        <div class="vendor-item-list-cell"> 
+                                          <span> 
+                                            HSN code
+                                          </span>
+                                          <span>
+                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                          </span>
+                                          
+                                        </div>
+                                        <div class="vendor-item-list-cell">
+                                          <span> 
+                                            Unit price
+                                          </span>
+                                          <span>
+                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                          </span> 
+                                        </div>
+                                        <div class="vendor-item-list-cell">
+                                          <span> 
+                                            Total credit
+                                          </span>
+                                          <span>
+                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                          </span>
+                                        </div>
+                                        <div class="vendor-item-list-cell">
+                                          <span> 
+                                            Remarks
+                                          </span>
+                                         
+                                        </div>
+                                        
+                                       
+                                      
+                                        
+                                      </div>
+                                  
+                                      <!-- Data Row Example -->
+                                      <div class="vendor-item-list-row">
+                                        <div class="vendor-item-list-cell vendor-item-checkbox"><input type="checkbox" /></div>
+                                        <div class="vendor-item-list-cell"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
+                                        <div class="vendor-item-list-cell"><span class="text-wrap">Arush Hukkeri</span></div>
+                                        <div class="vendor-item-list-cell"><span class="text-wrap">45, Across Prithvi School</span></div>
+                                        <div class="vendor-item-list-cell"><span class="text-wrap">West Bengal</span></div>
+                                        <div class="vendor-item-list-cell"><span class="text-wrap">9260650515</span></div>
+                                        
+                                      </div>
+                                      
+                                      
+                                     
+                                      
+                                      
+                                  
+                                      <!-- You can repeat the .vendor-row above for each vendor -->
+                                    </div>
+                                  </div>
+                             
+                            </div>
+                              </div>
+                        
+                              <!-- Selected Items Section -->
+                              <div class="custom-selected-items">
+                                <!-- <h3>SELECTED ITEMS (0)</h3> -->
+                                <!-- <p style="margin: 25px 0 ; font-size: 12px;">No items selected.</p>
+                                <small style="margin-top: 25px;">Kindly search the items to add it in the bucket.</small> -->
+                                <div class="selected-items-container">
+                                  <h3 class="selected-items-title" style="margin-left: 10px; margin-bottom: 25px;">SELECTED ITEMS (2)</h3>
+                                  
+                                  <div class="table-container select-item">
+                                    <div class="vendor-select-item-table-wrapper">
+                                      <div class="vendor-select-item-table">
+                                        <!-- Header Row -->
+                                        <div class="vendor-select-item-row vendor-select-item-header">
+                                          <div class="vendor-select-item-cell vendor-select-item-checkbox"><input type="checkbox" /></div>
+                                          <div class="vendor-select-item-cell"> 
+                                            <span>Item Name</span>
+                                            <span>
+                                              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                            </span>
+                                          </div>
+                                         
+                                        </div>
+                                    
+                                        <!-- Data Row Example -->
+                                        <div class="vendor-select-item-row">
+                                          <div class="vendor-select-item-cell vendor-select-item-checkbox"><input type="checkbox" /></div>
+                                          <div class="vendor-select-item-cell"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
+  
+                                          
+                                        </div>
+                                        
+                                        
+                                       
+                        
+                                    
+                                        <!-- You can repeat the .vendor-row above for each vendor -->
+                                      </div>
+                                    </div>
+                               
+                              </div>
+                                </div>
+                                 
+                              </div>
+                            </div>
+                        
+                            <div class="custom-modal-footer">
+                              <button class="ssa-btn ssa-btn-cancel custom-cancel-btn" ng-click="showNewItemDialog = false">Cancel</button>
+                              <!-- <button class="custom-add-btn"></button> -->
+                              <button class="ssa-btn ssa-btn-save custom-add-btn">
+                                Add to list
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- ------END---------- -->
+                        
+                        <button class="all-items-button all-items-icon-btn">
+                          <span class="material-symbols-outlined">
+                              filter_alt
+                              </span>
+                        </button>
+                        <button class="all-items-button all-items-icon-btn">
+                          <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                      </div>
+              </div>
+              <div class="filter-container add-items">
+                  <span class="filter-label">Quick Filters :</span>
+                  
+                  <button class="filter-button">Recently Added</button>
+                  <button class="filter-button">Oldest</button>
+                  <button class="filter-button">Contract to be expired</button>
+                  <button class="filter-button">To be expired</button>
+                  <button class="filter-button">Missing Details</button>
+                  <button class="filter-button">Missing GSTN</button>
+              
+                  <span class="filter-icon All-items"><span class="material-symbols-outlined">
+                      filter_alt
+                      </span></span>
+                  <a href="#" class="clear-all">Clear All</a>
+              </div>
+              <div class="tablebody">
+      
+                  <div class="sidebar-table All-items">
+                    <a href="#">ALL</a>
+                    <a href="#">A</a>
+                    <a href="#">B</a>
+                    <a href="#">C</a>
+                    <a href="#">D</a>
+                    <a href="#">E</a>
+                    <a href="#">F</a>
+                    <a href="#">G</a>
+                    <a href="#">H</a>
+                    <a href="#">I</a>
+                    <a href="#">J</a>
+                    <a href="#">K</a>
+                    <a href="#">L</a>
+                    <a href="#">M</a>
+                    <a href="#">N</a>
+                    <a href="#">O</a>
+                    <a href="#">P</a>
+                    <a href="#">Q</a>
+                    <a href="#">R</a>
+                    <a href="#">S</a>
+                    <a href="#">T</a>
+                    <a href="#">U</a>
+                    <a href="#">V</a>
+                    <a href="#">W</a>
+                    <a href="#">X</a>
+                    <a href="#">Y</a>
+                    <a href="#">Z</a>
+                  </div>
+                
+                <!-- Table Container -->
+                 <div class="table-container">
+                  <div class="vendor-item-table-wrapper">
+                    <div class="vendor-item-table">
+                      <!-- Header Row -->
+                      <div class="vendor-item-row vendor-item-header">
+                        <div class="vendor-item-cell vendor-item-checkbox"><input type="checkbox" /></div>
+                        <div class="vendor-item-cell"> 
+                          <span>Item Name</span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                        <div class="vendor-item-cell"> 
+                          <span> 
+                            HSN code
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                          
+                        </div>
+                        <div class="vendor-item-cell">
+                          <span> 
+                            Unit price
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span> 
+                        </div>
+                        <div class="vendor-item-cell">
+                          <span> 
+                            Total credit
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                        <div class="vendor-item-cell">
+                          <span> 
+                            Remarks
+                          </span>
+                         
+                        </div>
+                        
+                       
+                      
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="vendor-item-row">
+                        <div class="vendor-item-cell vendor-item-checkbox"><input type="checkbox" /></div>
+                        <div class="vendor-item-cell"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
+                        <div class="vendor-item-cell"><span class="text-wrap">Arush Hukkeri</span></div>
+                        <div class="vendor-item-cell"><span class="text-wrap">45, Across Prithvi School</span></div>
+                        <div class="vendor-item-cell"><span class="text-wrap">West Bengal</span></div>
+                        <div class="vendor-item-cell"><span class="text-wrap">9260650515</span></div>
+                        
+                      </div>
+                      
+                      
+                     
+                      
+                      
+                  
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                  </div>
+             
+            </div>
+            </div>
+              </div>
+              </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'history'">
+              <h3>Hello Order History</h3>
+              <p>View your past orders here.</p>
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'invoices'">
+              <h3>Hello Invoices</h3>
+              <p>All your invoices are shown here.</p>
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'settings'">
+              <h3>Hello Settings</h3>
+              <p>Manage your settings here.</p>
+            </div>
+      
+      </div>
+   </diV>
+   

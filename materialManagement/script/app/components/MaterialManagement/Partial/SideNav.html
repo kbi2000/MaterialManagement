@@ -1,0 +1,214 @@
+<div class="sidenav" ng-controller="SidebarController">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://via.placeholder.com/30" alt="Logo"> <!-- Replace with actual logo -->
+            <span class="ComppanyName">
+                DJUBO
+                <br>
+            <span class="SubName" style="display: block; margin-top: 5px;"> 
+                MATERIAL MANAGEMENT            
+            </span>
+            </span>
+            
+        </div>
+        <div class="appstore">
+            <span class="material-symbols-outlined">
+                apps
+                </span>
+            <span style="margin-left: 8px;">Djubo Appstore</span>
+        </div>
+        
+
+        <div class="search-box">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search">
+        
+        </div>
+
+        <div class="menu-section">
+            
+            <div class="menu-item expandable" ng-click="toggleMenu('dashboard')" ng-class="{'active': isMenuActive('dashboard')}">
+                <span class="nav-icon">                    
+                    <span class="material-symbols-outlined">
+                        dashboard
+                        </span>
+                </span>
+
+               <span class="MenuName">Dashboard</span>
+                <span class="icon-right">
+                    <i class="fa" ng-class="isMenuActive('dashboard') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </span>
+            </div>
+            <div class="submenu" ng-show="isMenuActive('dashboard')">
+                <div class="menu-item">Purchase Manager</div>
+                <div class="menu-item">Store Manager</div>
+                <div class="menu-item">F&B/Resturant</div>
+                <div class="menu-item">Inventory Controller</div>
+
+
+            </div>
+            <div class="menu-item expandable" ng-click="toggleMenu('purchaseManagement')" ng-class="{'active': isMenuActive('purchaseManagement')}">
+                <span class="nav-icon">                   
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                        </span>
+                </span> 
+                <span class="MenuName">
+                    Purchase Management
+                </span>               
+                <span class="icon-right">
+                    <i class="fa" ng-class="isMenuActive('purchaseManagement') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </span>
+            </div>
+            <div class="submenu" ng-show="isMenuActive('purchaseManagement')">
+                <div class="menu-item">Indent Request</div>
+                <div class="menu-item">Purchase Order</div>
+                <div class="menu-item">Purchase Order Approvals</div>
+                <div class="menu-item">Purchase Invoice</div>
+                <div class="menu-item">Vender Ledger</div>
+                <div class="menu-item">Credit Notes</div>
+            </div>
+            
+            
+
+            <div class="menu-item expandable" ng-click="toggleMenu('InventoryManagement')" ng-class="{'active': isMenuActive('InventoryManagement')}">
+                <span class="nav-icon">                    
+                    <span class="material-symbols-outlined">
+                        two_pager_store
+                        </span>
+                </span>
+                <span class="MenuName"> 
+                    Inventory Management
+                </span>
+                <span class="icon-right">
+                    <i class="fa" ng-class="isMenuActive('InventoryManagement') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </span>
+            </div>
+            <div class="submenu" ng-show="isMenuActive('InventoryManagement')">
+                <div class="menu-item">Inventory Overview</div>
+                <div class="menu-item">Stock by store/item/date</div>
+                <div class="menu-item">Low Stock Alerts</div>
+                <div class="menu-item">Return & Replacement Details</div>
+                <div class="menu-item">Expiry Tracker</div>
+                <div class="menu-item">Batch Wise Stock View</div> 
+
+            </div>
+
+            <div class="menu-item expandable" ng-click="toggleMenu('MaterialManagement')" ng-class="{'active': isMenuActive('MaterialManagement')}">
+                <span class="nav-icon">  
+                    <span class="material-symbols-outlined">
+                        add_shopping_cart
+                        </span>                 
+
+                </span>
+                <span class="MenuName">
+                    Material Request & Issuance
+                </span>
+                <span class="icon-right">
+                    <i class="fa" ng-class="isMenuActive('MaterialManagement') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </span>
+            </div>
+            <div class="submenu" ng-show="isMenuActive('MaterialManagement')">
+                <div class="menu-item">Credit Indent</div>
+                <div class="menu-item">Approvals Indent</div>
+                <div class="menu-item">Material Transfer</div>
+                <div class="menu-item">Issue Notes</div>
+                <div class="menu-item">Material Receipt Acknowledegemnt</div>
+                <div class="menu-item">Descrepancy Resolution & Inventory Adjustment</div>
+            </div>
+
+            <div class="menu-item expandable" ng-click="toggleMenu('F&B')" ng-class="{'active': isMenuActive('F&B')}">
+                <span class="nav-icon">    
+                    <span class="material-symbols-outlined">
+                        storefront
+                        </span>               
+
+                </span>
+                <span class="MenuName">
+                    F&B
+
+                </span>
+                <span class="icon-right">
+                    <i class="fa" ng-class="isMenuActive('F&B') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                </span>
+            </div>
+            <div class="submenu" ng-show="isMenuActive('F&B')">
+                <div class="menu-item">Order Wise Material Consumtion</div>
+            </div>
+        </div>
+
+        <!-- <div class="menu-section">
+            <div class="menu-title">
+                Analyze
+                <br>
+                <span>Repor</span>
+            </div> -->
+            <!-- <div class="menu-item expandable" onclick="toggleMenu(this)">Reports</div> -->
+           
+        <!-- </div> -->
+        <div class="Analyze_Menu">
+            <span>Analyze </span>
+        </div>
+        <div class="menu-item expandable" ng-click="toggleMenu('Report')" ng-class="{'active': isMenuActive('Report')}">
+            <span class="nav-icon">                    
+                <span class="material-symbols-outlined">
+                    lab_profile
+                    </span>
+            </span>
+            Reports
+            <span class="icon-right">
+                <!-- <i class="fa" ng-class="isMenuActive('Report') ? 'fa-chevron-up' : 'fa-chevron-down'"></i> -->
+            </span>
+        </div>
+
+        <div class="Analyze_Menu">
+            <span>Manage</span>
+        </div>
+        <div class="menu-item expandable" ng-click="toggleMenu('Setting')" ng-class="{'active': isMenuActive('Setting')}">
+            <span class="nav-icon">                    
+                <span class="material-symbols-outlined">
+                    settings
+                    </span>
+            </span> 
+            <span class="">
+                Setting
+            </span>               
+            <span class="icon-right">
+                <i class="fa" ng-class="isMenuActive('Setting') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+            </span>
+        </div>
+        <div class="submenu" ng-show="isMenuActive('Setting')">
+            <div class="menu-item">Roles & Access Management</div>
+            <div class="menu-item">Notification & Alert Setting</div>
+            <div class="menu-item">Purchase Order Approvals</div>
+            <div class="menu-item">Purchase Invoice</div>
+            <div class="menu-item">Vender Ledger</div>
+            <div class="menu-item">Credit Notes</div>
+        </div>
+        <div class="menu-item expandable" ng-click="toggleMenu('Setup')" ng-class="{'active': isMenuActive('Setup')}">
+            <span class="nav-icon"> 
+                <span class="material-symbols-outlined">
+                    more_horiz
+                    </span>                   
+            </span> 
+            <span class="">
+                Setup
+            </span>               
+            <span class="icon-right">
+                <i class="fa" ng-class="isMenuActive('Setup') ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+            </span>
+        </div>
+        <div class="submenu" ng-show="isMenuActive('Setup')">
+            <div class="menu-item">Items</div>
+            <div class="menu-item">Vender</div>
+            <div class="menu-item">Stores</div>
+            <div class="menu-item">UOM</div>
+            <div class="menu-item">Category</div>
+            <div class="menu-item">Tax Code</div>
+            <div class="menu-item">HSN Code</div>
+            <div class="menu-item">Menu</div>
+            <div class="menu-item">Recipe</div>
+        </div>
+    </div>
+
+</div>
