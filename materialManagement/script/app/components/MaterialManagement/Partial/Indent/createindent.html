@@ -1,0 +1,170 @@
+<div >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">Indent</div>
+          <div class="ssa-actions">
+            <button class="ssa-btn ssa-btn-save">
+                Save Draft
+              </button>
+            <button class="ssa-btn ssa-btn-save">
+                 Submit Request
+              </button>
+              
+              <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button>
+            <button class="ssa-btn ssa-btn-cancel">Cancel</button>
+           
+            
+          </div>
+      </div>
+      <div  ng-controller="ConfigurationController">
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Indent Information</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper">
+                  <div class="form-section-header">Request Details</div>
+                  <div class="form-grid-item create-indent">
+                    <div class="form-input-wrapper">
+                      <label>Indent No</label>
+                      <input type="text" value="1234" />                   
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label>Requestor Store</label>
+                      <select>
+                        <option>Raw</option>
+                        <option>Sellable</option>
+                      </select>                    
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label>Requestor Name</label>
+                        <input type="text" value="Sumit Sham" />
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Requestor Date</label>
+                        <input type="date" value="" />
+                      </div>
+                   
+                    <div class="form-input-wrapper">
+                      <label>Supplier Store</label>
+                      <select>
+                        <option>Raw</option>
+                        <option>Sellable</option>
+                      </select>                   
+                     </div>
+                    <div class="form-input-wrapper">
+                      <label>Status Request</label>
+                      <select>
+                        <option>Pending</option>
+                        <option>Sellable</option>
+                      </select>
+                    </div>
+                  </div>
+              
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Item Details</span>
+                    <div>
+                        <button class="new-vendor"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                  </div>
+                  
+                  <div class="item-indent-table-wrapper">
+                    <div class="item-indent-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-row item-indent-header">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="min-width: 100px;"> 
+                          <span>Serial No.</span>
+                         
+                        </div>
+                        <div class="item-indent-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                        </div>
+                        <div class="item-indent-cell">
+                          <span> 
+                           Category
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-cell">
+                            <span> 
+                             Current Stock
+                            </span>
+                          
+                          </div>
+                        <div class="item-indent-cell">
+                          <span> 
+                           Qty Requested
+                          </span>
+                        
+                        </div>
+                       
+                          <div class="item-indent-cell">
+                            <span> 
+                                Remarks
+                            </span>
+                          
+                          </div>
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-row">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
+                            <option>Milk</option>
+                            <option>Panner</option>
+                          </select> </span>
+                        </div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
+                            <option>VEG</option>
+                            <option>Non</option>
+                          </select> </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
+                            <option>Kg</option>
+                            <option>Cm</option>
+                          </select></span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        </span></div>
+                      </div>
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                 
+              
+                  </div>
+                  
+
+            </div>
+            
+      </div>
+   </diV>
+   

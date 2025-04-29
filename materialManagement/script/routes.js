@@ -6,11 +6,11 @@ app.config(function($routeProvider) {
         controller: 'ConfigurationController'
     })
     .when('/editvendor', {
-        templateUrl: './script/app/components/MaterialManagement/Partial/VendorTwo.html',
+        templateUrl: './script/app/components/MaterialManagement/Partial/Vendor/VendorTwo.html',
         controller: 'ConfigurationController'
     })
     .when('/addvendor', {
-        templateUrl: './script/app/components/MaterialManagement/Partial/addvendor.html',
+        templateUrl: './script/app/components/MaterialManagement/Partial/Vendor/addvendor.html',
         controller: 'ConfigurationController'
     }) 
     .when('/item', {
@@ -47,6 +47,30 @@ app.config(function($routeProvider) {
     }) 
     .when('/outlet', {
         templateUrl: './script/app/components/MaterialManagement/Partial/Outlet/Outletlist.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/createindent', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Indent/createindent.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/reviewindent', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Indent/Reviewindent.html',
+        controller: 'ConfigurationController'
+    })
+    .when('/material', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/MaterialTransfer/materialtransfer.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/issuenote', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/MaterialTransfer/IssueNote.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/discrepancy', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/MaterialTransfer/discrepancyraised.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/discrepancyresolution', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/MaterialTransfer/discrepancyresolution.html',
         controller: 'ConfigurationController'
     }) 
     .otherwise({

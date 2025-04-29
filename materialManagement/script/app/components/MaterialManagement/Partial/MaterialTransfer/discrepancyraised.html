@@ -1,0 +1,164 @@
+<div >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">Discrepancy Raised</div>
+          <div class="ssa-actions">
+            <button class="ssa-btn ssa-btn-save">
+                 Confirm Reciept
+              </button>
+              <!-- <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button> -->
+            <button class="ssa-btn ssa-btn-cancel">Report Discrepancy</button>
+           
+            
+          </div>
+      </div>
+      <div  ng-controller="ConfigurationController">
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Discrepancy Details</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper">
+                  <div class="form-section-header"></div>
+                  <div class="form-grid-item create-indent">
+                    <div class="form-input-wrapper">
+                      <label>Issue Note No</label>
+                      <input type="text" value="1234" />                   
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label>Transfer Date</label>
+                      <input type="date" value="" />                                      
+                    </div>
+                   
+                      <div class="form-input-wrapper">
+                        <label>Indent No.</label>
+                        <input type="text" value="12345" />
+                      </div>
+                   
+                  
+                    <div class="form-input-wrapper">
+                      <label>Supplier Store Name</label>
+                      <input type="text" value="Sham" />              
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label>Requesting Store Name</label>
+                        <input type="text" value="Bhala" />              
+                       </div>
+                  
+                  </div>
+              
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Item Received</span>
+                  </div>
+                  
+                  <div class="menu-item-table-wrapper">
+                    <div class="menu-item-table">
+                      <!-- Header Row -->
+                      <div class="menu-item-row menu-item-header">
+                        <!-- <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div> -->
+                        <div class="menu-item-cell" style="min-width: 100px;"> 
+                          <span>Serial No.</span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                        <div class="menu-item-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span> 
+                        </div>
+                        <div class="menu-item-cell">
+                          <span> 
+                           Expected Qty
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span> 
+                        </div>
+                        <div class="menu-item-cell">
+                          <span> 
+                           Received Qty
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                        <div class="menu-item-cell">
+                          <span> 
+                           Discrepancy
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                        <div class="menu-item-cell">
+                          <span> 
+                            Discrepancy Type
+                          </span>
+                          <span>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                        <div class="menu-item-cell">
+                            <span> 
+                                Remarks
+                            </span>
+                            <span>
+                              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                         
+                        
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="menu-item-row">
+                        <!-- <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div> -->
+                        <div class="menu-item-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="menu-item-cell"><span class="text-wrap"><select>
+                            <option>Rice</option>
+                            <option>Milk</option>
+                          </select></span></div>
+                        <div class="menu-item-cell"><span class="text-wrap"><input type="text" value="34" />  </span></div>
+                        <div class="menu-item-cell"><span class="text-wrap"><input type="text" value="23" />  </span></div>
+                        <div class="menu-item-cell"><span class="text-wrap"><input type="text" value="98" />  </span></div>
+                        <div class="menu-item-cell"><span class="text-wrap"><select>
+                            <option>Yes</option>
+                            <option>No</option>
+                          </select> </span></div>
+                        <div class="menu-item-cell"><span class="text-wrap">                      <input type="text" value="discrea" />                   
+                        </span></div> 
+                      </div>
+                      
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                 
+              
+                  </div>
+                  
+                  
+
+            </div>
+            
+      </div>
+   </diV>
+   
