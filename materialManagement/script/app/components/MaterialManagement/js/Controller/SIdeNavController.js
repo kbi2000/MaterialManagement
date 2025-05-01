@@ -1,5 +1,42 @@
-app.controller('SidebarController', function ($scope) {
+app.controller('SidebarController', function ($scope,$location) {
     $scope.activeMenu = null;
+    $scope.goToItem = function() {
+        $location.path('/item');
+    };
+    $scope.goToStore = function() {
+        $location.path('/store');
+    };
+    $scope.goToVendor = function() {
+        $location.path('/configuration');
+    };
+    $scope.goToMenu = function() {
+        $location.path('/menuitemlist');
+    };
+    $scope.goToOutlet = function() {
+        $location.path('/outlet');
+    };
+    $scope.goToCreateIndent = function() {
+        $location.path('/createindent');
+    };
+    
+    $scope.goToApproveIndent = function() {
+        $location.path('/reviewindent');
+    };
+    $scope.goToMaterialTransfer = function() {
+        $location.path('/material');
+    };
+    $scope.goToDR = function() {
+        $location.path('/discrepancyresolution');
+    };
+    $scope.goToD = function() {
+        $location.path('/discrepancy');
+    };
+    $scope.goToIssueNote= function() {
+        $location.path('/issuenote');
+    };
+    $scope.goToInventory= function() {
+        $location.path('/invetorylist');
+    };
 
     $scope.toggleMenu = function (menu) {
         if ($scope.activeMenu === menu) {

@@ -1,11 +1,13 @@
-<div >
+<div ng-controller="ConfigurationController">
     <top-bar></top-bar>
+    <form name="myForm" novalidate ng-submit="submitForm()">
+
   
       <div class="ssa-container">
           <div class="ssa-title">Add Items</div>
           <div class="ssa-actions">
             <button class="ssa-btn ssa-btn-cancel">Cancel</button>
-            <button class="ssa-btn ssa-btn-save">
+            <button class="ssa-btn ssa-btn-save" type="submit">
               <span class="material-symbols-outlined">
                   save
                   </span> Save
@@ -13,7 +15,7 @@
             
           </div>
       </div>
-      <div  ng-controller="ConfigurationController">
+      <div  >
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
@@ -40,7 +42,16 @@
                       </select>                    </div>
                     <div class="form-input-wrapper">
                       <label>Item Name</label>
-                      <input type="text" value="Milk" />
+                      <input type="text"
+                      id="ItemName"
+                      name="ItemName"
+                      ng-model="ItemName"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.ItemName.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.ItemName.$invalid">
+                        Please provide a valid Item Name.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper Mark" style="align-items: center; display: flex; flex-direction: row; margin-left: auto;">
                       <!-- <span class="vendor-switch-text" style="margin-right: 10px;">Mark as unregistered business</span>
@@ -54,7 +65,15 @@
                    
                     <div class="form-input-wrapper">
                       <label>Item Code</label>
-                      <input type="text" value="8887F7" />
+                      <input type="text" id="ItemCode"
+                      name="ItemCode"
+                      ng-model="ItemCode"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.ItemCode.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.ItemName.$invalid">
+                        Please provide a valid Item Code.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Item Type</label>
@@ -79,19 +98,51 @@
                     </div>
                     <div class="form-input-wrapper">
                       <label>HSN</label>
-                      <input type="text" value="5422" />
+                      <input type="text"  id="HSN"
+                      name="HSN"
+                      ng-model="HSN"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.HSN.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.HSN.$invalid">
+                        Please provide a valid HSN.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Tax Code</label>
-                      <input type="text" value="9853" />
+                      <input type="text" id="TaxCode"
+                      name="TaxCode"
+                      ng-model="TaxCode"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.TaxCode.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.TaxCode.$invalid">
+                        Please provide a valid Tax Code.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                         <label>GST %</label>
-                        <input type="text" value="9" />
+                        <input type="text" id="GST"
+                        name="GST"
+                        ng-model="GST"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.GST.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.GST.$invalid">
+                          Please provide a valid GST.
+                        </div> 
                       </div>
                       <div class="form-input-wrapper">
                         <label>Sale Price</label>
-                        <input type="text" value="4189" />
+                        <input type="text" id="SalePrice"
+                        name="SalePrice"
+                        ng-model="SalePrice"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.SalePrice.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.SalePrice.$invalid">
+                          Please provide a Sale Price.
+                        </div> 
                       </div>
                   </div>
               
@@ -99,11 +150,27 @@
                   <div class="vendor-address-grid">
                     <div class="form-input-wrapper">
                       <label>Preferred Vendor Name</label>
-                      <input type="text" value=" Vijaya Health Centre," />
+                      <input type="text" id="PreVendorName"
+                      name="PreVendorName"
+                      ng-model="PreVendorName"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.PreVendorName.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.PreVendorName.$invalid">
+                        Please provide a Preferred Vendor Name.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Purchase Price</label>
-                      <input type="text" value="7000" />
+                      <input type="text" id="PurchasePrice"
+                      name="PurchasePrice"
+                      ng-model="PurchasePrice"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.PurchasePrice.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.PurchasePrice.$invalid">
+                        Please provide a  Purchase Price.
+                      </div> 
                     </div>
                   </div>
                   <div class="vendor-final-row">
@@ -111,6 +178,7 @@
                    
                   </div>
                 </div>
+              </form>
             </div>
             <div class="changale-tab-content" ng-show="selectedTabItem === 'vendor'">
               <div class="items-upper">

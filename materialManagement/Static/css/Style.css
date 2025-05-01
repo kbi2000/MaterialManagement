@@ -49,10 +49,13 @@ body {
     background-color: #28343c;
     color: white;
     display: flex;
+  overflow-y: auto;
     flex-direction: column;
     padding-top: 10px;
 }
-
+.sidenav::-webkit-scrollbar {
+  display: none;              
+}
 .sidebar-header {
     padding: 15px;
     display: flex;
@@ -1808,7 +1811,7 @@ border-bottom-right-radius: 0;
   padding: 0px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  max-height: 50vh;
+  max-height: 75vh;
 }
 .additem-table-wrapper::-webkit-scrollbar {
   display: none;
@@ -1949,7 +1952,7 @@ border-bottom-right-radius: 0;
   padding: 0px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  max-height: 50vh;
+  max-height: 75vh;
 }
 .store-table-wrapper::-webkit-scrollbar {
   display: none;
@@ -2048,7 +2051,7 @@ border-bottom-right-radius: 0;
   padding: 0px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  max-height: 50vh;
+  max-height: 75vh;
 }
 .inventory-table-wrapper::-webkit-scrollbar {
   display: none;
@@ -2145,7 +2148,7 @@ border-bottom-right-radius: 0;
   padding: 0px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  max-height: 50vh;
+  max-height: 75vh;
 }
 .menu-item-table-wrapper::-webkit-scrollbar {
   display: none;
@@ -2244,7 +2247,7 @@ border-bottom-right-radius: 0;
   padding: 0px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  max-height: 50vh;
+  max-height: 75vh;
 }
 .outlet-table-wrapper::-webkit-scrollbar {
   display: none;
@@ -2853,3 +2856,39 @@ border-bottom-right-radius: 0;
 .discrepancy-cancel-btn {
   background-color: #eaeff1;
 }
+/* validation */
+ input:invalid:focus {
+      border-color: red;
+    }
+
+    input:invalid:focus ~ .error-icon {
+      display: block;
+    }
+
+    input:invalid:focus ~ .error-message {
+      display: block;
+    }
+
+
+    input.ng-invalid.show-error {
+      border: 2px solid red;
+    }
+    
+    .error-icon {
+      position: absolute;
+      right: 10px;
+      top: 37px;
+      color: red;
+      font-size: 18px;
+    }
+    
+    .input-container {
+      position: relative;
+    }
+    
+    .error-message {
+      color: red;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+    /* end */

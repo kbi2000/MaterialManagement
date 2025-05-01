@@ -85,7 +85,7 @@
                 </span>
             </div>
             <div class="submenu" ng-show="isMenuActive('InventoryManagement')">
-                <div class="menu-item">Inventory Overview</div>
+                <div class="menu-item" ng-click="goToInventory()">Inventory Overview</div>
                 <div class="menu-item">Stock by store/item/date</div>
                 <div class="menu-item">Low Stock Alerts</div>
                 <div class="menu-item">Return & Replacement Details</div>
@@ -109,12 +109,12 @@
                 </span>
             </div>
             <div class="submenu" ng-show="isMenuActive('MaterialManagement')">
-                <div class="menu-item">Credit Indent</div>
-                <div class="menu-item">Approvals Indent</div>
-                <div class="menu-item">Material Transfer</div>
-                <div class="menu-item">Issue Notes</div>
-                <div class="menu-item">Material Receipt Acknowledegemnt</div>
-                <div class="menu-item">Descrepancy Resolution & Inventory Adjustment</div>
+                <div class="menu-item"  ng-click="goToCreateIndent()">Credit Indent</div>
+                <div class="menu-item" ng-click="goToApproveIndent()">Approvals Indent</div>
+                <div class="menu-item" ng-click="goToMaterialTransfer()">Material Transfer</div>
+                <div class="menu-item" ng-click="goToIssueNote()">Issue Notes</div>
+                <div class="menu-item" ng-click="goToD()">Material Receipt Acknowledegemnt</div>
+                <div class="menu-item" ng-click="goToDR()">Descrepancy Resolution & Inventory Adjustment</div>
             </div>
 
             <div class="menu-item expandable" ng-click="toggleMenu('F&B')" ng-class="{'active': isMenuActive('F&B')}">
@@ -133,7 +133,7 @@
                 </span>
             </div>
             <div class="submenu" ng-show="isMenuActive('F&B')">
-                <div class="menu-item">Order Wise Material Consumtion</div>
+                <div class="menu-item" ng-click="goToOutlet()">Order Wise Material Consumtion</div>
             </div>
         </div>
 
@@ -199,14 +199,14 @@
             </span>
         </div>
         <div class="submenu" ng-show="isMenuActive('Setup')">
-            <div class="menu-item">Items</div>
-            <div class="menu-item">Vender</div>
-            <div class="menu-item">Stores</div>
+            <div class="menu-item" ng-click="goToItem()">Items</div>
+            <div class="menu-item" ng-click="goToVendor()">Vender</div>
+            <div class="menu-item" ng-click="goToStore()">Stores</div>
             <div class="menu-item">UOM</div>
             <div class="menu-item">Category</div>
             <div class="menu-item">Tax Code</div>
             <div class="menu-item">HSN Code</div>
-            <div class="menu-item">Menu</div>
+            <div class="menu-item" ng-click="goToMenu()">Menu</div>
             <div class="menu-item">Recipe</div>
         </div>
     </div>

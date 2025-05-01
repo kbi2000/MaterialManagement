@@ -1,11 +1,13 @@
-<div >
-    <top-bar></top-bar>
+<div ng-controller="ConfigurationController">
+  <top-bar></top-bar>
+  <form name="myForm" novalidate ng-submit="submitForm()">
+
   
       <div class="ssa-container">
           <div class="ssa-title">New Menu Item</div>
           <div class="ssa-actions">
             <button class="ssa-btn ssa-btn-cancel">Cancel</button>
-            <button class="ssa-btn ssa-btn-save">
+            <button class="ssa-btn ssa-btn-save" type="submit">
               <span class="material-symbols-outlined">
                   save
                   </span> Save
@@ -13,7 +15,7 @@
             
           </div>
       </div>
-      <div  ng-controller="ConfigurationController">
+      <div  >
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
@@ -36,7 +38,15 @@
                    
                     <div class="form-input-wrapper">
                       <label>Menu Item Name</label>
-                      <input type="text" value="Milk" />
+                      <input type="text" id="MenuItemName"
+                      name="MenuItemName"
+                      ng-model="MenuItemName"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.MenuItemName.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.MenuItemName.$invalid">
+                        Please provide a valid Menu Item Name.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Outlet Name</label>
@@ -46,7 +56,15 @@
                       </select>                    </div>
                     <div class="form-input-wrapper">
                       <label>Item Code</label>
-                      <input type="text" value="10" />
+                      <input type="text"id="ItemCode"
+                      name="ItemCode"
+                      ng-model="ItemCode"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.ItemCode.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.ItemName.$invalid">
+                        Please provide a valid Item Code.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Catgeory</label>
@@ -57,11 +75,27 @@
                     </div>
                     <div class="form-input-wrapper">
                       <label>Selling Price</label>
-                      <input type="text" value="" />
+                      <input type="text" id="SellingPrice"
+                      name="SellingPrice"
+                      ng-model="SellingPrice"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.SellingPrice.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.SellingPrice.$invalid">
+                        Please provide a valid Selling Price.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Tax Code</label>
-                      <input type="text" value="23" />
+                      <input type="text" id="TaxCode"
+                      name="TaxCode"
+                      ng-model="TaxCode"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.TaxCode.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.TaxCode.$invalid">
+                        Please provide a valid Tax Code.
+                      </div> 
                     </div>
                   
                   </div>
@@ -82,6 +116,7 @@
                    
                   </div> -->
                 </div>
+              </form>
             </div>
             <div class="changale-tab-content" ng-show="selectedTabItem === 'vendor'">
               <div class="items-upper">

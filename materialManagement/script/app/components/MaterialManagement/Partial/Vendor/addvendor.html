@@ -1,11 +1,11 @@
 <div >
     <top-bar></top-bar>
-  
+  <form>
       <div class="ssa-container">
           <div class="ssa-title">Add Vender</div>
           <div class="ssa-actions">
             <button class="ssa-btn ssa-btn-cancel">Cancel</button>
-            <button class="ssa-btn ssa-btn-save">
+            <button class="ssa-btn ssa-btn-save" type="submit">
               <span class="material-symbols-outlined">
                   save
                   </span> Save
@@ -33,7 +33,8 @@
                   <div class="vendor-grid">
                     <div class="form-input-wrapper">
                       <label>Vendor Name</label>
-                      <input type="text" value="Scented Space Amenities Pvt. Ltd." />
+                      <input type="text" value="Scented Space Amenities Pvt. Ltd." required  />
+
                     </div>
                     <div class="form-input-wrapper">
                       <label>GSTN</label>
@@ -105,6 +106,7 @@
                     </div>
                   </div>
                 </div>
+              </form>
             </div>
             <div class="changale-tab-content" ng-show="selectedTab === 'items'">
               <div class="items-upper">

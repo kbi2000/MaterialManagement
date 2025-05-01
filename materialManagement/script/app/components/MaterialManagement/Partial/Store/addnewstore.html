@@ -1,11 +1,12 @@
-<div >
+<div ng-controller="ConfigurationController">
     <top-bar></top-bar>
-  
+    <form name="myForm" novalidate ng-submit="submitForm()">
+
       <div class="ssa-container">
           <div class="ssa-title">New Store</div>
           <div class="ssa-actions">
             <button class="ssa-btn ssa-btn-cancel">Cancel</button>
-            <button class="ssa-btn ssa-btn-save">
+            <button class="ssa-btn ssa-btn-save" type="submit">
               <span class="material-symbols-outlined">
                   save
                   </span> Save
@@ -13,7 +14,7 @@
             
           </div>
       </div>
-      <div  ng-controller="ConfigurationController">
+      <div >
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
@@ -38,29 +39,69 @@
                       </select>                    </div>
                     <div class="form-input-wrapper">
                       <label>Store Name</label>
-                      <input type="text" value="EAMPQ7988I" />
+                      <input type="text" id="StoreName"
+                      name="StoreName"
+                      ng-model="StoreName"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.StoreName.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.StoreName.$invalid">
+                        Please provide a valid Store Name.
+                      </div> 
                     </div>
                     <div></div>
 
                     <div class="form-input-wrapper">
                         <label>Store Location</label>
-                        <input type="text" value="" />
+                        <input type="text" id="StoreLocation"
+                        name="StoreLocation"
+                        ng-model="StoreLocation"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.StoreLocation.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.StoreLocation.$invalid">
+                          Please provide a valid Store Location.
+                        </div> 
                       </div>
                       
                       <div class="form-input-wrapper">
                         <label>Store Address</label>
-                        <input type="text" value="" />
+                        <input type="text" id="StoreAddress"
+                        name="StoreAddress"
+                        ng-model="StoreAddress"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.StoreAddress.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.StoreAddress.$invalid">
+                          Please provide a valid  Store Address.
+                        </div> 
                       </div>
                       <div></div>
 
                    
                     <div class="form-input-wrapper">
                       <label>Store Manager</label>
-                      <input type="text" value="Aditi Nigam" />
+                      <input type="text" id="StoreManager"
+                      name="StoreManager"
+                      ng-model="StoreManager"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.StoreManager.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.StoreManager.$invalid">
+                        Please provide a valid  Store Manager.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Contact No.</label>
-                      <input type="number" value="Aditi Nigam" />
+                      <input type="number" id="ContactNo"
+                      name="ContactNo"
+                      ng-model="ContactNo"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.ContactNo.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.ContactNo.$invalid">
+                        Please provide a valid  Contact No.
+                      </div> 
 
                     </div>
                    
@@ -81,6 +122,7 @@
                   
                    
                   </div>
+                </form>
                  
                   </div>
                 </div>

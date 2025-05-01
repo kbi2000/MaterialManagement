@@ -1,6 +1,6 @@
-<div >
-    <top-bar></top-bar>
-  
+<div ng-controller="ConfigurationController">
+  <top-bar></top-bar>
+    <form name="myForm" novalidate ng-submit="submitForm()">
       <div class="ssa-container">
           <div class="ssa-title">Edit Inventory</div>
           <div class="ssa-actions">
@@ -13,7 +13,7 @@
             
           </div>
       </div>
-      <div  ng-controller="ConfigurationController">
+      <div  >
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
@@ -36,47 +36,135 @@
                    
                     <div class="form-input-wrapper">
                       <label>Item Name</label>
-                      <input type="text" value="Milk" />
+                      <input type="text" id="ItemName"
+                      name="ItemName"
+                      ng-model="ItemName"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.ItemName.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.ItemName.$invalid">
+                        Please provide a valid  Item Name.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Store Name</label>
-                      <input type="text" value="Store" />
+                      <input type="text" id="StoreName"
+                      name="StoreName"
+                      ng-model="StoreName"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.StoreName.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.StoreName.$invalid">
+                        Please provide a valid Store Name.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Quantity</label>
-                      <input type="text" value="10" />
+                      <input type="text" id="Quantity"
+                      name="Quantity"
+                      ng-model="Quantity"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.Quantity.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.Quantity.$invalid">
+                        Please provide  Quantity.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>UOM</label>
-                      <input type="text" value="CM" />
+                      <input type="text" id="UOM"
+                      name="UOM"
+                      ng-model="UOM"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.UOM.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.UOM.$invalid">
+                        Please provide  UOM.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Expiry Date</label>
-                      <input type="date" value="" />
+                      <input type="date" id="ExpiryDate"
+                      name="ExpiryDate"
+                      ng-model="ExpiryDate"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.ExpiryDate.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.ExpiryDate.$invalid">
+                        Please provide  Expiry Date.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                       <label>Minimum Stock Lavel</label>
-                      <input type="text" value="23" />
+                      <input type="text" id="MSL"
+                      name="MSL"
+                      ng-model="MSL"
+                      required
+                      ng-class="{'show-error': showErrors && myForm.MSL.$invalid}"
+                      />
+                      <div class="error-message" ng-show="showErrors && myForm.MSL.$invalid">
+                        Please provide  Minimum Stock Lavel.
+                      </div> 
                     </div>
                     <div class="form-input-wrapper">
                         <label>Return Qty</label>
-                        <input type="text" value="50" />
+                        <input type="text" id="ReturnQty"
+                        name="ReturnQty"
+                        ng-model="ReturnQty"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.ReturnQty.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.ReturnQty.$invalid">
+                          Please provide Return Qty.
+                        </div> 
                       </div>
                       <div class="form-input-wrapper">
                         <label>Replacement Qty</label>
-                        <input type="text" value="34" />
+                        <input type="text" id="ReplacementQty"
+                        name="ReplacementQty"
+                        ng-model="ReplacementQty"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.ReplacementQty.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.ReplacementQty.$invalid">
+                          Please provide  Replacement Qty.
+                        </div> 
                       </div>
                       <div class="form-input-wrapper">
                         <label>Damaged Qty</label>
-                        <input type="text" value="43" />
+                        <input type="text"id="DamagedQty"
+                        name="DamagedQty"
+                        ng-model="DamagedQty"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.DamagedQty.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.DamagedQty.$invalid">
+                          Please provide  Damaged Qty.
+                        </div> 
                       </div>
                       <div class="form-input-wrapper">
                         <label>FIFO Priority</label>
-                        <input type="text" value="34" />
+                        <input type="text" id="FIFOPriority"
+                        name="FIFOPriority"
+                        ng-model="FIFOPriority"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.FIFOPriority.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.FIFOPriority.$invalid">
+                          Please provide  FIFO Priority.
+                        </div> 
                       </div>
                       <div class="form-input-wrapper">
                         <label>Batch No.</label>
-                        <input type="text" value="GTE3B" />
+                        <input type="text" id="BatchNo"
+                        name="BatchNo"
+                        ng-model="BatchNo"
+                        required
+                        ng-class="{'show-error': showErrors && myForm.BatchNo.$invalid}"
+                        />
+                        <div class="error-message" ng-show="showErrors && myForm.BatchNo.$invalid">
+                          Please provide  Batch No.
+                        </div> 
                       </div>
                   </div>
               
@@ -96,6 +184,7 @@
                    
                   </div> -->
                 </div>
+              </form>
             </div>
             <div class="changale-tab-content" ng-show="selectedTabItem === 'vendor'">
               <div class="items-upper">
