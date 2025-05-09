@@ -2,18 +2,15 @@
     <top-bar></top-bar>
   
       <div class="ssa-container">
-          <div class="ssa-title">Arrove Indent</div>
+          <div class="ssa-title">Advance Inventory Search</div>
           <div class="ssa-actions">
-            <button class="ssa-btn ssa-btn-save">
-                 Approval All
-              </button>
+              <button class="ssa-btn ssa-btn-cancel">Reset</button>
               <button class="ssa-btn ssa-btn-save">
-                Partial Approval
-             </button>
-             <button class="ssa-btn ssa-btn-save">
-                Rejected Indent
-             </button>
-            <button class="ssa-btn ssa-btn-cancel">Cancel</button>
+                <span class="material-symbols-outlined">
+                    Search
+                    </span> Search
+              </button>
+              
            
             
           </div>
@@ -22,7 +19,7 @@
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
-            ng-click="selectTab('items')">Request Details</div>
+            ng-click="selectTab('items')">Inventory Details</div>
               <!-- <div class="changale-tab"
                    ng-class="{active: selectedTabItem === 'vendor'}"
                    ng-click="selectTab('vendor')">Vendor</div> -->
@@ -35,46 +32,80 @@
             </div>
             <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
               <div class="form-card-wrapper">
-                  <div class="form-section-header">Review Indent</div>
+                  <div class="form-section-header">Inventory</div>
                   <div class="form-grid-item create-indent">
                     <div class="form-input-wrapper">
-                      <label>Indent No</label>
-                      <input type="text" value="1234" />                   
-                    </div>
-                    <div class="form-input-wrapper">
-                      <label>Requestor Store</label>
+                      <label>Store Name</label>
                       <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
+                        <option>H.k Store</option>
+                        <option>K.p</option>
+
+                      </select>                    </div>
+                    <div class="form-input-wrapper">
+                      <label>Item Name</label>
+                      <select>
+                        <option>Maggie</option>
+                        <option>Milk</option>
                       </select>                    
                     </div>
                     <div class="form-input-wrapper">
-                        <label>Requestor Name</label>
-                        <input type="text" value="Sumit Sham" />
-                      </div>
+                        <label>Category</label>
+                        <select>
+                            <option>Veg</option>
+                            <option>Non Veg</option>
+                          </select>                      </div>
                       <div class="form-input-wrapper">
-                        <label>Date</label>
+                        <label>From</label>
                         <input type="date" value="" />
                       </div>
-                   
+                      <div class="form-input-wrapper">
+                        <label>To</label>
+                        <input type="date" value="" />
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Vendor</label>
+                        <select>
+                          <option>One</option>
+                          <option>Two</option>
+                        </select>
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>UOM</label>
+                        <select>
+                            <option>K.G</option>
+                            <option>F.P</option>
+                          </select> 
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Batch No</label>
+                        <input type="text" value="" />
+                    
+                       </div>
                     <div class="form-input-wrapper">
-                      <label>Supplier Store</label>
-                      <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
-                      </select>                   
+                      <label>Expiry Date</label>
+                      <input type="date" value="KFC" />
+                  
                      </div>
                     <div class="form-input-wrapper">
-                      <label>Status</label>
+                      <label>Consumtion Method</label>
                       <select>
-                        <option>Pending</option>
-                        <option>Sellable</option>
+                        <option>FIFO</option>
+                        <option>WAM</option>
                       </select>
                     </div>
+                    <div class="form-input-wrapper">
+                        <label>Stock Status</label>
+                        <select>
+                            <option>In Stock</option>
+                            <option>Out of Stock</option>
+                            <option>Below Order Level</option>
+                          </select>
+                    
+                       </div>
                   </div>
               
                   <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                    <span>Item Details</span>
+                    <span>Search Result</span>
                   </div>
                   
                   <div class="item-indent-table-wrapper">
@@ -106,20 +137,26 @@
                       
                         <div class="item-indent-cell">
                           <span> 
-                           Qty Requested
+                           Qty Avilable
                           </span>
                         
                         </div>
                         <div class="item-indent-cell">
                             <span> 
-                                Approve
+                                Expiry Date
                             </span>
                           
                           </div>
                        
                           <div class="item-indent-cell">
                             <span> 
-                                Action
+                                Batch No
+                            </span>
+                          
+                          </div>
+                          <div class="item-indent-cell">
+                            <span> 
+                                Vendor
                             </span>
                           
                           </div>
@@ -137,14 +174,11 @@
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> 25/05/2025
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <select>
-                            <option>Approve</option>
-                            <option>Partial</option>
-                            <option>Rejected</option>
-
-                          </select>
+                        <div class="item-indent-cell"><span class="text-wrap"> Approved
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">One</span>
                         </span></div>
                       </div>
                       <div class="item-indent-row">
@@ -156,14 +190,11 @@
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> 25/05/2025
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <select>
-                            <option>Approve</option>
-                            <option>Partial</option>
-                            <option>Rejected</option>
-
-                          </select>
+                        <div class="item-indent-cell"><span class="text-wrap"> Approved
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">TWo</span>
                         </span></div>
                       </div>  <div class="item-indent-row">
                         <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
@@ -174,14 +205,11 @@
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> 25/05/2025
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <select>
-                            <option>Approve</option>
-                            <option>Partial</option>
-                            <option>Rejected</option>
-
-                          </select>
+                        <div class="item-indent-cell"><span class="text-wrap"> Approved
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">THREE</span>
                         </span></div>
                       </div>
                  
@@ -193,10 +221,10 @@
                   </div>
                   <div class="form-section-header"></div>
                   <div class="form-grid-item create-indent">
-                    <div class="form-input-wrapper">
+                    <!-- <div class="form-input-wrapper">
                       <label>Approval Remarks</label>
                       <textarea style="min-height: 70px;"></textarea>
-                    </div>
+                    </div> -->
                    
                   </div>
                   

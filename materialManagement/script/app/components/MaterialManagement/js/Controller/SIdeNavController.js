@@ -37,6 +37,22 @@ app.controller('SidebarController', function ($scope,$location) {
     $scope.goToInventory= function() {
         $location.path('/invetorylist');
     };
+    $scope.goToAdvanceInventory= function() {
+        $location.path('/advanceinvetorylist');
+    };
+    $scope.goToIndentSummary= function() {
+        $location.path('/indentsummary');
+    };
+    $scope.goToLowStockAlert= function(){
+        $location.path('/lowstockalert')
+    }
+    $scope.goToRetutnandReplacement= function(){
+        $location.path('/returnreplacementinventory')
+    }
+    $scope.goToExpiryTrack=function(){
+        $location.path('/expirytracking')
+    }
+
 
     $scope.toggleMenu = function (menu) {
         if ($scope.activeMenu === menu) {

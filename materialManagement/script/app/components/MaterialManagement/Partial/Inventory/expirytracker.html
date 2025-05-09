@@ -1,0 +1,263 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">Expiry Tracking</div>
+          <div class="ssa-actions">
+            <button class="ssa-btn ssa-btn-cancel">Reset</button>
+              <button class="ssa-btn ssa-btn-save">
+                <span class="material-symbols-outlined">
+                    Search
+                    </span> Search
+              </button>
+              <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
+                <!-- Trigger Button -->
+                <button class="more-options" ng-click="toggleDropdown($event)">⋯</button>
+              
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" ng-show="showDropdown">
+                  <ul>
+                    <!-- <li><a href="#" class="inline-link"><span class="material-symbols-outlined">csv</span> <span class="view-more-name">Export to CSV</span> </a></li> 
+                    <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Menu Item</span> </a></li> -->
+                    <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
+                      download
+                      </span><span class="view-more-name">Download Excell</span></a></li>
+                    <!-- <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
+                      download
+                      </span> <span class="view-more-name">Current View Export</span></a></li> -->
+                      
+                      
+                  </ul>
+                </div>
+              </div>
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Expiry Tracking Information</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper">
+                  <div class="form-section-header">Request Details</div>
+                  <div class="form-grid-item create-indent">
+                    
+                    <div class="form-input-wrapper">
+                      <label>expiry</label>
+                      <select>
+                        <option>Raw</option>
+                        <option>Sellable</option>
+                      </select>                    
+                    </div>
+                  
+                      
+                   
+                    <div class="form-input-wrapper">
+                      <label>Category</label>
+                      <select>
+                        <option>Return</option>
+                        <option>Replacement</option>
+                      </select>                   
+                     </div>
+                   
+                    
+                      <div class="form-input-wrapper">
+                        <label>Expiry Within</label>
+                        <select>
+                            <option>15</option>
+                            <option>30</option>
+                          </select>                  </div>
+                  </div>
+                  
+              
+                  <!-- <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Item Details</span>
+                    <div>
+                        <button class="new-vendor"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                  </div> -->
+                  
+                  <div class="expiry-table-wrapper">
+                    <div class="expiry-table">
+                      <!-- Header Row -->
+                      <div class="expiry-row expiry-header">
+                        <div class="expiry-cell expiry-checkbox"><input type="checkbox" /></div>
+                        <div class="expiry-cell"> 
+                          <span>Item Code</span>
+                         
+                        </div>
+                        <div class="expiry-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                         
+                        </div>
+                        <div class="expiry-cell">
+                          <span> 
+                           Batch No.
+                          </span>
+                          
+                        </div>
+                        <div class="expiry-cell">
+                          <span> 
+                           Qty
+                          </span>
+                          
+                        </div>
+                        <div class="expiry-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="expiry-cell">
+                          <span> 
+                           expiry Date
+                          </span>
+                          
+                        </div>
+                        <div class="expiry-cell">
+                          <span> 
+                           Store
+                          </span>
+                          <span>
+                            <!-- <i class="fa fa-arrow-down" aria-hidden="true"></i> -->
+                          </span>
+                        </div>
+                        <div class="expiry-cell">
+                            <span> 
+                             Status
+                            </span>
+                            <span>
+                              <!-- <i class="fa fa-arrow-down" aria-hidden="true"></i> -->
+                            </span>
+                          </div>
+                        
+                        <!-- <div class="expiry-cell">Current Status</div> -->
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="expiry-row">
+                        <div class="expiry-cell expiry-checkbox"><input type="checkbox" /></div>
+                        <div class="expiry-cell" style="color:#0078d4 ;"><span class="text-wrap"> 2LLC</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">Rice</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">454454554</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">23</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">kg</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">22/12/25</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">Naer</span></div>
+                        <div class="expiry-cell"><span class="text-wrap">pen</span></div>
+
+                        
+                        <!-- <div class="expiry-cell"><span class="expiry-status active">Active</span></div> -->
+                      </div>
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                  </div>
+                  <div class="ssa-container" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="ssa-actions" style="text-align: center;">
+                      <button class="ssa-btn ssa-btn-cancel">Batch Disposal</button>
+                      <button class="ssa-btn ssa-btn-save">Transfer</button>
+                      <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
+                        <!-- Trigger Button -->
+                        <!-- Dropdown Menu -->
+                      </div>
+                    </div>
+                  </div>
+                  
+
+            </div>
+            
+      </div>
+   </diV>
+  
+  <div id="returnReplacementPopup" ng-show="false">
+    <div class="popup-content">
+      <h3>Transfer Item</h3>
+      <div class="menu-item-table-wrapper">
+        <div class="menu-item-table">
+          <!-- Header Row -->
+          <div class="menu-item-row menu-item-header">
+            <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div>
+            <div class="menu-item-cell"> 
+              <span> Item Name</span>
+             
+            </div>
+            <div class="menu-item-cell"> 
+              <span> 
+                Qty
+              </span>
+             
+            </div>
+            <div class="menu-item-cell">
+              <span> 
+               UOM
+              </span>
+              
+            </div>
+            <div class="menu-item-cell">
+              <span> 
+               Expiry Date
+              </span>
+             
+            </div>
+            <div class="menu-item-cell">
+              <span> 
+               Current Store
+              </span>
+             
+            </div>
+            <div class="menu-item-cell">
+              <span> 
+               Move to Store
+              </span>
+             
+            </div>
+           
+            
+            
+            <!-- <div class="store-cell">Current Status</div> -->
+            
+          </div>
+      
+          <!-- Data Row Example -->
+          <div class="menu-item-row">
+            <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div>
+            <div class="menu-item-cell" style="color:#0078d4 ;"><span class="text-wrap">Premiu</span></div>
+            <div class="menu-item-cell"><span class="text-wrap">Hakuna Matana</span></div>
+            <div class="menu-item-cell"><span class="text-wrap">454454554</span></div>
+            <div class="menu-item-cell"><span class="text-wrap">Veg</span></div>
+            <div class="menu-item-cell"><span class="text-wrap">76328</span></div>
+            <div class="menu-item-cell"><span class="text-wrap"> <select>
+                <option>Raw</option>
+                <option>Sellable</option>
+              </select> </span></div>
+            
+            <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
+          </div>
+         
+          <!-- You can repeat the .vendor-row above for each vendor -->
+        </div>
+      </div>
+  
+        <div class="popup-buttons full-width">
+          
+          <button>Transfer</button>
+        </div>
+      </div>
+    </div>
+  </div>

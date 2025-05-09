@@ -1,29 +1,19 @@
-<div ng-controller="ConfigurationController" >
+<div >
     <top-bar></top-bar>
   
       <div class="ssa-container">
-          <div class="ssa-title">Indent</div>
+          <div class="ssa-title">Post Approve Indent Summary</div>
           <div class="ssa-actions">
-            <button  class="ssa-btn ssa-btn-save" ng-click="goToIndentSummary()">
-                Save Draft
-              </button>
-            <button class="ssa-btn ssa-btn-save">
-                 Submit Request
-              </button>
-              
-              <button class="ssa-btn ssa-btn-save">
-                Reset
-              </button>
-            <button class="ssa-btn ssa-btn-cancel">Cancel</button>
+            
            
             
           </div>
       </div>
-      <div  >
+      <div  ng-controller="ConfigurationController">
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
-            ng-click="selectTab('items')">Indent Information</div>
+            ng-click="selectTab('items')">Indent Summary Details</div>
               <!-- <div class="changale-tab"
                    ng-class="{active: selectedTabItem === 'vendor'}"
                    ng-click="selectTab('vendor')">Vendor</div> -->
@@ -36,7 +26,7 @@
             </div>
             <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
               <div class="form-card-wrapper">
-                  <div class="form-section-header">Request Details</div>
+                  <div class="form-section-header">Indent Summary</div>
                   <div class="form-grid-item create-indent">
                     <div class="form-input-wrapper">
                       <label>Indent No</label>
@@ -44,41 +34,49 @@
                     </div>
                     <div class="form-input-wrapper">
                       <label>Requestor Store</label>
-                      <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
-                      </select>                    
+                      <input type="text" value="Sham Store" />                   
+                   
                     </div>
                     <div class="form-input-wrapper">
                         <label>Requestor Name</label>
                         <input type="text" value="Sumit Sham" />
                       </div>
                       <div class="form-input-wrapper">
-                        <label>Requestor Date</label>
+                        <label>Requester Date</label>
+                        <input type="date" value="" />
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Previewd By</label>
+                        <input type="date" value="" />
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Review Date</label>
                         <input type="date" value="" />
                       </div>
                    
                     <div class="form-input-wrapper">
                       <label>Supplier Store</label>
-                      <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
-                      </select>                   
+                      <input type="text" value="KFC" />
+                  
                      </div>
                     <div class="form-input-wrapper">
-                      <label>Status Request</label>
+                      <label>Status</label>
                       <select>
                         <option>Pending</option>
                         <option>Sellable</option>
+                        <option>Rejected</option>
+
                       </select>
                     </div>
+                    <div class="form-input-wrapper">
+                        <label>Arroval Remaks</label>
+                        <input type="text" value="Yes" />
+                    
+                       </div>
                   </div>
               
                   <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <span>Item Details</span>
-                    <div>
-                        <button class="new-vendor"><i class="fas fa-plus"></i> Add</button>
-                    </div>
                   </div>
                   
                   <div class="item-indent-table-wrapper">
@@ -107,19 +105,26 @@
                           </span>
                           
                         </div>
-                        <div class="item-indent-cell">
-                            <span> 
-                             Current Stock
-                            </span>
-                          
-                          </div>
+                      
                         <div class="item-indent-cell">
                           <span> 
                            Qty Requested
                           </span>
                         
                         </div>
+                        <div class="item-indent-cell">
+                            <span> 
+                                Approve
+                            </span>
+                          
+                          </div>
                        
+                          <div class="item-indent-cell">
+                            <span> 
+                                Action Taken
+                            </span>
+                          
+                          </div>
                           <div class="item-indent-cell">
                             <span> 
                                 Remarks
@@ -134,69 +139,48 @@
                       <div class="item-indent-row">
                         <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
                         <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>Milk</option>
-                            <option>Panner</option>
-                          </select> </span>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Hakuna Matana</span> </span>
                         </div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>VEG</option>
-                            <option>Non</option>
-                          </select> </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>Kg</option>
-                            <option>Cm</option>
-                          </select></span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Veg</span> </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> Yes
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> Approved
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
                       </div>
                       <div class="item-indent-row">
                         <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
                         <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>Milk</option>
-                            <option>Panner</option>
-                          </select> </span>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Hakuna Matana</span> </span>
                         </div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>VEG</option>
-                            <option>Non</option>
-                          </select> </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>Kg</option>
-                            <option>Cm</option>
-                          </select></span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Veg</span> </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> Yes
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> Approved
                         </span></div>
-                      </div><div class="item-indent-row">
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
+                        </span></div>
+                      </div>  <div class="item-indent-row">
                         <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
                         <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">3</span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>Milk</option>
-                            <option>Panner</option>
-                          </select> </span>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Hakuna Matana</span> </span>
                         </div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>VEG</option>
-                            <option>Non</option>
-                          </select> </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><select>
-                            <option>Kg</option>
-                            <option>Cm</option>
-                          </select></span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Veg</span> </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> Yes
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> <input type="text" value="8887" />
+                        <div class="item-indent-cell"><span class="text-wrap"> Approved
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
                       </div>
                  
@@ -205,6 +189,14 @@
                     </div>
                  
               
+                  </div>
+                  <div class="form-section-header"></div>
+                  <div class="form-grid-item create-indent">
+                    <!-- <div class="form-input-wrapper">
+                      <label>Approval Remarks</label>
+                      <textarea style="min-height: 70px;"></textarea>
+                    </div> -->
+                   
                   </div>
                   
 

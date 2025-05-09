@@ -1,0 +1,264 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">Return and Replacement</div>
+          <div class="ssa-actions">
+            <button class="ssa-btn ssa-btn-cancel">Reset</button>
+              <button class="ssa-btn ssa-btn-save">
+                <span class="material-symbols-outlined">
+                    Search
+                    </span> Search
+              </button>
+              <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
+                <!-- Trigger Button -->
+                <button class="more-options" ng-click="toggleDropdown($event)">⋯</button>
+              
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" ng-show="showDropdown">
+                  <ul>
+                    <!-- <li><a href="#" class="inline-link"><span class="material-symbols-outlined">csv</span> <span class="view-more-name">Export to CSV</span> </a></li> 
+                    <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Menu Item</span> </a></li> -->
+                    <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
+                      download
+                      </span><span class="view-more-name">Download Excell</span></a></li>
+                    <!-- <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
+                      download
+                      </span> <span class="view-more-name">Current View Export</span></a></li> -->
+                      
+                      
+                  </ul>
+                </div>
+              </div>
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Return and Replacement Information</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper">
+                  <div class="form-section-header">Request Details</div>
+                  <div class="form-grid-item create-indent">
+                    
+                    <div class="form-input-wrapper">
+                      <label>Store</label>
+                      <select>
+                        <option>Raw</option>
+                        <option>Sellable</option>
+                      </select>                    
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label>Requestor Name</label>
+                        <input type="text" value="Sumit Sham" />
+                      </div>
+                      
+                   
+                    <div class="form-input-wrapper">
+                      <label>Return Type</label>
+                      <select>
+                        <option>Return</option>
+                        <option>Replacement</option>
+                      </select>                   
+                     </div>
+                    <div class="form-input-wrapper">
+                      <label>From</label>
+                      <input type="date" value="" />
+
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label>To</label>
+                        <input type="date" value="" />
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Item</label>
+                        <select>
+                            <option>Rice</option>
+                            <option>Replacement</option>
+                          </select>                  </div>
+                      <div class="form-input-wrapper">
+                        <label>Category</label>
+                        <select>
+                            <option>Veg</option>
+                            <option>Replacement</option>
+                          </select>                  </div>
+                  </div>
+                  
+              
+                  <!-- <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Item Details</span>
+                    <div>
+                        <button class="new-vendor"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                  </div> -->
+                  
+                  <div class="menu-item-material-transfer-table-wrapper">
+                    <div class="menu-item-material-transfer-table">
+                      <!-- Header Row -->
+                      <div class="menu-item-material-transfer-row menu-item-material-transfer-header">
+                        <!-- <div class="menu-item-material-transfer-cell menu-item-material-transfer-checkbox"><input type="checkbox" /></div> -->
+                        <div class="menu-item-material-transfer-cell" style="min-width: 100px;"> 
+                          <span>Sr No.</span>
+                         
+                        </div>
+                        <div class="menu-item-material-transfer-cell">
+                            <span> 
+                                Item Code
+                            </span>
+                          
+                          </div>
+                        <div class="menu-item-material-transfer-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                        </div>
+                        <div class="menu-item-material-transfer-cell">
+                          <span> 
+                           Resolution Type
+                          </span>
+                         
+                        </div>
+                        <div class="menu-item-material-transfer-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="menu-item-material-transfer-cell">
+                            <span> 
+                              Qty
+                            </span>
+                          
+                          </div>
+                        <div class="menu-item-material-transfer-cell">
+                          <span> 
+                            Discrepancy Type
+                          </span>
+                        
+                        </div>
+                       
+                          <div class="menu-item-material-transfer-cell">
+                            <span> 
+                                Status
+                            </span>
+                          
+                          </div>
+                          <div class="menu-item-material-transfer-cell">
+                            <span> 
+                                Action
+                            </span>
+                          
+                          </div>
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="menu-item-material-transfer-row">
+                        <!-- <div class="menu-item-material-transfer-cell menu-item-material-transfer-checkbox"><input type="checkbox" /></div> -->
+                        <div class="menu-item-material-transfer-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap">1232 </span>
+                        </div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap">Rice </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap">one</span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> kg
+                        </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> 87
+                        </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> two
+                        </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> ok
+                        </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="vendor-status active">Search</span></div>
+                      </div>
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                 
+              
+                  </div>
+                  
+
+            </div>
+            
+      </div>
+   </diV>
+   <div id="returnReplacementPopup" ng-show="false">
+    <div class="popup-content">
+      <h3>Return/Replacement Details</h3>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="itemCode">Item Code</label>
+          <input type="text" id="itemCode">
+        </div>
+        <div class="form-group">
+          <label for="itemName">Item Name</label>
+          <input type="text" id="itemName">
+        </div>
+  
+        <div class="form-group">
+          <label for="resolutionType">Resolution Type</label>
+          <select id="resolutionType">
+            <option value="return">Return</option>
+            <option value="replace">Replacement</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity">
+        </div>
+  
+        <div class="form-group">
+          <label for="initiatedBy">Initiated By</label>
+          <input type="text" id="initiatedBy">
+        </div>
+        <div class="form-group">
+          <label for="incidentNo">Indent No.</label>
+          <input type="text" id="incidentNo">
+        </div>
+  
+        <div class="form-group">
+          <label for="discrepancyType">Discrepancy Type</label>
+          <input type="text" id="discrepancyType">
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+            <label for="discrepancyType">Comment</label>
+            <input type="text" id="discrepancyType">
+          </div>
+          <div class="form-group">
+            <div class="popup-buttons full-width">
+                <button style="background-color:#8f9ca2 ; color: white;">Save</button>
+              </div>
+          </div>
+  
+        <div class="popup-buttons full-width">
+          <button>Approve</button>
+          <button>Reject</button>
+          <button>Request Replacement</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -87,10 +87,12 @@
             <div class="submenu" ng-show="isMenuActive('InventoryManagement')">
                 <div class="menu-item" ng-click="goToInventory()">Inventory Overview</div>
                 <div class="menu-item">Stock by store/item/date</div>
-                <div class="menu-item">Low Stock Alerts</div>
-                <div class="menu-item">Return & Replacement Details</div>
-                <div class="menu-item">Expiry Tracker</div>
+                <div class="menu-item" ng-click="goToLowStockAlert()">Low Stock Alerts</div>
+                <div class="menu-item" ng-click="goToRetutnandReplacement()">Return & Replacement Details</div>
+                <div class="menu-item" ng-click="goToExpiryTrack()">Expiry Tracker</div>
                 <div class="menu-item">Batch Wise Stock View</div> 
+                <div class="menu-item" ng-click="goToAdvanceInventory()">Inventory Search</div>
+
 
             </div>
 
@@ -115,6 +117,8 @@
                 <div class="menu-item" ng-click="goToIssueNote()">Issue Notes</div>
                 <div class="menu-item" ng-click="goToD()">Material Receipt Acknowledegemnt</div>
                 <div class="menu-item" ng-click="goToDR()">Descrepancy Resolution & Inventory Adjustment</div>
+                <!-- <div class="menu-item" ng-click="goToIndentSummary()">Indent Summary</div> -->
+
             </div>
 
             <div class="menu-item expandable" ng-click="toggleMenu('F&B')" ng-class="{'active': isMenuActive('F&B')}">

@@ -2,48 +2,19 @@
     <top-bar></top-bar>
        <div class="container">
            <div class="header">
-               <h2>Outlet <span class="count">(12)</span></h2>
+               <h2>All u <span class="count">(1142)</span></h2>
                <div class="actions">
                    <div class="search-box-main-page">
                        <i class="fas fa-search"></i>
-                       <input type="text" placeholder="Search in Outlet">
+                       <input type="text" placeholder="Search in Vendors">
                    </div>
-                   <button class="new-vendor"><i class="fas fa-plus"></i> New Outlet</button>
-                   <div class="outlet-modal" ng-show="false">
-                    <div class="outlet-modal-content">
-                      
-                      <label for="outletName">Outlet Name</label>
-                      <input type="text" id="outletName" placeholder="Enter Outlet Name">
-                  
-                      <label for="storeName">Store Name</label>
-                      <select id="storeName">
-                        <option>Select Store</option>
-                        <option>Store A</option>
-                        <option>Store B</option>
-                      </select>
-                  
-                      <label for="storeRef">Store Pref. No.</label>
-                      <select id="storeRef">
-                        <option>Select Pref No.</option>
-                        <option>001</option>
-                        <option>002</option>
-                      </select>
-                  
-                      <div class="outlet-modal-buttons">
-                        <button class="outlet-save-btn">Save</button>
-                        <button class="outlet-cancel-btn">Cancel</button>
-                      </div>
-                    </div>
-                  </div>
+                   <button class="new-vendor"  ng-click="goToNewVendor()"><i class="fas fa-plus"></i> New Vendor</button>
                    <div ng-controller="ConfigurationController" class="dropdown-wrapper">
-                       <!-- Trigger Button -->
                        <button class="more-options" ng-click="toggleDropdown($event)">⋯</button>
-                     
-                       <!-- Dropdown Menu -->
-                       <div class="dropdown-menu" ng-show="showDropdown">
+                                         <div class="dropdown-menu" ng-show="showDropdown">
                          <ul>
                            <li><a href="#" class="inline-link"><span class="material-symbols-outlined">csv</span> <span class="view-more-name">Export to CSV</span> </a></li> 
-                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Outlet</span> </a></li>
+                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Vendors</span> </a></li>
                            <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
                              download
                              </span><span class="view-more-name">Download Import Format</span></a></li>
@@ -55,7 +26,27 @@
                          </ul>
                        </div>
                      </div>
-                             </div>
+               </div>
+                <!-- <div class="actions">
+                 <div class="mybtn-group">
+                   <div class="mybtn">
+                     <span class="mybtn-icon">
+                       <span class="material-symbols-outlined filter-fill-icon-edit">
+                         stylus
+                         </span></span>
+                     Edit
+                   </div>
+                   <div class="mybtn">Mark as Blacklisted</div>
+                   <div class="mybtn mybtn-danger">
+                     <span class="mybtn-icon"><span class="material-symbols-outlined">
+                       delete
+                       </span></span>
+                     Delete Vendor
+                   </div>
+                   <div class="mybtn mybtn-more">⋯</div>
+                 </div>
+               </div> -->
+               
            </div>
        </div>
        <div class="filter-container">
@@ -63,10 +54,10 @@
            
            <button class="filter-button">Recently Added</button>
            <button class="filter-button">Oldest</button>
-           <!-- <button class="filter-button">Contract to be expired</button>
+           <button class="filter-button">Contract to be expired</button>
            <button class="filter-button">To be expired</button>
            <button class="filter-button">Missing Details</button>
-           <button class="filter-button">Missing GSTN</button> -->
+           <button class="filter-button">Missing GSTN</button>
        
            <span class="filter-icon" ng-click="toggleFilterPanel()"><span class="material-symbols-outlined">
                filter_alt
@@ -108,56 +99,12 @@
          </div>
        
        <!-- Table Container -->
-       <div class="outlet-table-wrapper">
-         <div class="outlet-table">
-           <!-- Header Row -->
-           <div class="outlet-row outlet-header">
-             <div class="outlet-cell outlet-checkbox"><input type="checkbox" /></div>
-             
-             <div class="outlet-cell"> 
-               <span> 
-                 Outlet Name
-               </span>
-               <span>
-                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
-               </span> 
-             </div>
-             <div class="outlet-cell">
-               <span> 
-                Store Name
-               </span>
-               <span>
-                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
-               </span> 
-             </div>
-             <div class="outlet-cell">
-               <span> 
-                Store Preferences
-               </span>
-             
-             </div>
-            
-            
-             
-             
-             <!-- <div class="store-cell">Current Status</div> -->
-             
-           </div>
-       
-           <!-- Data Row Example -->
-           <div class="outlet-row">
-             <div class="outlet-cell outlet-checkbox"><input type="checkbox" /></div>
-             <div class="outlet-cell" style="color:#0078d4 ;"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
-             <div class="outlet-cell"><span class="text-wrap">Hakuna Matana</span></div>
-             <div class="outlet-cell"><span class="text-wrap">454454554</span></div>
-           
-             
-             <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
-           </div>
-          
-           <!-- You can repeat the .vendor-row above for each vendor -->
-         </div>
-       </div>
+       <!-- <div class="handsontable-wrapper">
+        <div handsontable-directive data="vendorData" columns="vendorColumns"></div>
+      </div> -->
+      
+            <div class="ht" handsontable-directive data="vendorData" columns="vendorColumns"
+                 style="overflow:auto; height: 400px; margin-top: 20px; border-radius: 5px;"></div>
          <div class="filter-panel-container" ng-show="isFilterPanelOpen">
                <div class="filter-panel-header">
                  <div class="filter-panel-title">

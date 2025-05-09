@@ -5,6 +5,10 @@ app.config(function($routeProvider) {
         templateUrl: './script/app/components/MaterialManagement/Partial/Configuration.html',
         controller: 'ConfigurationController'
     })
+    .when('/newhand', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Vendor/newhandstonetable.html',
+        controller: 'ConfigurationController'
+    })
     .when('/editvendor', {
         templateUrl: './script/app/components/MaterialManagement/Partial/Vendor/VendorTwo.html',
         controller: 'ConfigurationController'
@@ -37,6 +41,10 @@ app.config(function($routeProvider) {
         templateUrl: './script/app/components/MaterialManagement/Partial/Inventory/inventorylist.html',
         controller: 'ConfigurationController'
     }) 
+    .when('/advanceinvetorylist', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Inventory/advanceinvetorysearch.html',
+        controller: 'ConfigurationController'
+    }) 
     .when('/addmenuitem', {
         templateUrl: './script/app/components/MaterialManagement/Partial/MenuItem/addmenuitem.html',
         controller: 'ConfigurationController'
@@ -57,6 +65,10 @@ app.config(function($routeProvider) {
         templateUrl: './script/app/components/MaterialManagement/Partial/Indent/Reviewindent.html',
         controller: 'ConfigurationController'
     })
+    .when('/indentsummary', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Indent/IndentSummary.html',
+        controller: 'ConfigurationController'
+    })
     .when('/material', {
         templateUrl: './script/app/components/MaterialManagement/Partial/MaterialTransfer/materialtransfer.html',
         controller: 'ConfigurationController'
@@ -71,6 +83,18 @@ app.config(function($routeProvider) {
     }) 
     .when('/discrepancyresolution', {
         templateUrl: './script/app/components/MaterialManagement/Partial/MaterialTransfer/discrepancyresolution.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/lowstockalert', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Stock/LowStockAlert.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/returnreplacementinventory', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Inventory/ReturnAndReplacementInvetory.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/expirytracking', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Inventory/expirytracker.html',
         controller: 'ConfigurationController'
     }) 
     .otherwise({

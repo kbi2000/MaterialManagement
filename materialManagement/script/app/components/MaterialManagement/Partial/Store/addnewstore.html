@@ -1,4 +1,6 @@
 <div ng-controller="ConfigurationController">
+  <div id="toast"></div>
+
     <top-bar></top-bar>
     <form name="myForm" novalidate ng-submit="submitForm()">
 
@@ -49,8 +51,9 @@
                         Please provide a valid Store Name.
                       </div> 
                     </div>
-                    <div></div>
-
+                    <div class="form-input-wrapper Markhide" style="align-items: center; display: flex; flex-direction: row; margin-left: auto;">
+                    </div> 
+                  
                     <div class="form-input-wrapper">
                         <label>Store Location</label>
                         <input type="text" id="StoreLocation"
@@ -76,8 +79,8 @@
                           Please provide a valid  Store Address.
                         </div> 
                       </div>
-                      <div></div>
-
+                      <div class="form-input-wrapper Markhide" style="align-items: center; display: flex; flex-direction: row; margin-left: auto;">
+                      </div> 
                    
                     <div class="form-input-wrapper">
                       <label>Store Manager</label>
@@ -107,7 +110,10 @@
                    
                     <div class="form-input-wrapper">
                       <label>Parent Store</label>
-                      <input type="text" value="Kitchen" />
+                      <select>
+                        <option>Delhi Store</option>
+                        <option>Kanpur </option>
+                      </select>
 
                      
                     </div>
