@@ -97,6 +97,38 @@ app.config(function($routeProvider) {
         templateUrl: './script/app/components/MaterialManagement/Partial/Inventory/expirytracker.html',
         controller: 'ConfigurationController'
     }) 
+    .when('/purchasemanagement', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Dashboard/PurchaseManager.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/F&B', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Dashboard/F&BDashboard.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/Recipe', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Recipe/recipelist.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/AddRecipe', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Recipe/addrecipe.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/PoApprove', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/PurchaseOrderManagement/PurchaseOrderApprove.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/PoView', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/PurchaseOrderManagement/PurchaseOrderView.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/pendingdeliveries', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Deliveries/PendingDelivries.html',
+        controller: 'ConfigurationController'
+    }) 
+    .when('/grn', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/GRN/craetegrn.html',
+        controller: 'ConfigurationController'
+    })
     .otherwise({
         redirectTo: '/configuration'
     });

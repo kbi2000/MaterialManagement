@@ -37,6 +37,14 @@ $scope.goToNewInventory = function() {
 $scope.goToIndentSummary= function() {
   $location.path('/indentsummary');
 };
+$scope.goToaddRecipe= function() {
+  $location.path('/AddRecipe');
+};
+$scope.goToaddRecipe= function() {
+  $location.path('/AddRecipe');
+};
+
+
     $scope.selectTab = function(tab) {
       $scope.selectedTab = tab;
       $scope.selectedTabItem =tab;

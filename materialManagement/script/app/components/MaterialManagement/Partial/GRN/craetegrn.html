@@ -1,0 +1,272 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">GRN</div>
+          <div class="ssa-actions">
+            <button  class="ssa-btn ssa-btn-save" >
+                Save GRN
+              </button>
+            <button class="ssa-btn ssa-btn-save">
+                 Save As Draft
+              </button>
+              
+              <!-- <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button> -->
+            <!-- <button class="ssa-btn ssa-btn-cancel">Cancel</button> -->
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">GRN</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper ">
+                  <div class="form-section-header"></div>
+                  <div class="form-grid-item grn">
+                    <div class="form-input-wrapper">
+                        <label class="Purchase-lable">GRN:<span style="margin-left: 10px;">234</span></label>
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label class="Purchase-lable">GRN Date:<span style="margin-left: 10px;">23/04/2035</span></label>
+                      </div>
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Po Number:<span style="margin-left: 10px;">PO334234</span></label>
+                    </div>
+                    
+                    <div class="form-input-wrapper">
+                        <label class="Purchase-lable">PO Date:<span style="margin-left: 10px;"></span>12/05/2025</span></label>
+                      </div>
+                      
+                   
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Vendor:<span style="margin-left: 10px;"></span>Sham</span></label>
+                                      
+                     </div>
+                     <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Delivery Eta:<span style="margin-left: 10px;"></span>16/02/2025</span></label>
+                      </div>
+                     <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Received Store:<span style="margin-left: 10px;"></span>Lorem </span></label>
+                                        
+                       </div>  <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Received By:<span style="margin-left: 10px;"></span>Sham</span></label>
+                                        
+                       </div>
+                  </div>
+              
+                  
+                  
+                  
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Item Received Details</span>
+                   
+                  </div>
+                  <div class="discrepancy-resolution-table-wrapper">
+                    <div class="discrepancy-resolution-table">
+                      <!-- Header Row -->
+                      <div class="discrepancy-resolution-row discrepancy-resolution-header">
+                        <!-- <div class="discrepancy-resolution-cell discrepancy-resolution-checkbox"><input type="checkbox" /></div> -->
+                        <div class="discrepancy-resolution-cell" style="min-width: 140px;"> 
+                          <span>Sr No</span>
+                        
+                        </div>
+                        <div class="discrepancy-resolution-cell"> 
+                            <span> 
+                              Item Name
+                            </span>
+                          
+                          </div>
+                        <div class="discrepancy-resolution-cell"> 
+                          <span> 
+                            Order Qty
+                          </span>
+                         
+                        </div>
+                        <div class="discrepancy-resolution-cell">
+                          <span> 
+                           Received  Qty
+                          </span>
+                         
+                        </div>
+                        <div class="discrepancy-resolution-cell">
+                          <span> 
+                            UOM
+                          </span>
+                         
+                        </div>
+                        <div class="discrepancy-resolution-cell">
+                          <span> 
+                           Expiry Date
+                          </span>
+                         
+                        </div>
+                        <div class="discrepancy-resolution-cell">
+                          <span> 
+                            Unit Price
+                          </span>
+                      
+                        </div>
+                        <div class="discrepancy-resolution-cell">
+                            <span> 
+                                Total Price
+                            </span>
+                          
+                          </div>
+                          <div class="store-cell">Remarks</div>
+
+                         
+                        
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="discrepancy-resolution-row">
+                        <!-- <div class="discrepancy-resolution-cell discrepancy-resolution-checkbox"><input type="checkbox" /></div> -->
+                        <div class="discrepancy-resolution-cell" style="color:#0078d4 ; min-width: 140px;"><span class="text-wrap">1</span></div>
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap">Rice</span></div>
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap">kg</span></div>
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap"><input style="width: 80px;"></span></div>
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap">2354</span></div>
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap">YES</span></div>
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap">2354</span></div> 
+                        <div class="discrepancy-resolution-cell"><span class="text-wrap">2354</span></div> 
+                        <div class="store-cell"><span class="text-wrap">Resolve</span></div>
+                        
+                      <!-- popup -->
+                    
+                      <!-- <pop up></pop> -->
+                     
+                      
+                      
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                  
+                   
+                 
+              
+                  </div>
+                    
+
+                   
+                 
+              
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Discrepancy Section</span>
+                   
+                  </div>
+                  <div class="item-indent-table-wrapper">
+                    <div class="item-indent-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-row item-indent-header">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="min-width: 100px;"> 
+                          <span>Serial No.</span>
+                         
+                        </div>
+                        <div class="item-indent-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                        </div>
+                        <div class="item-indent-cell">
+                          <span> 
+                           Discrepancy Type
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-cell">
+                          <span> 
+                           Expected Qty
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-cell">
+                            <span> 
+                             Actual Qty
+                            </span>
+                          
+                          </div>
+                        <div class="item-indent-cell">
+                          <span> 
+                           UOM
+                          </span>
+                        
+                        </div>
+                       
+                          <div class="item-indent-cell">
+                            <span> 
+                                Remarks
+                            </span>
+                          
+                          </div>
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                     
+                      <div class="item-indent-row">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
+                            <option>Milk</option>
+                            <option>Panner</option>
+                          </select> </span>
+                        </div>
+                        <div class="item-indent-cell"><span class="text-wrap">Qty </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap">10</span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"> 8
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"> Kg
+                        </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"> lorem
+                        </span></div>
+                      </div>
+                      <hr>
+                      <div class="ssa-container" style="display: flex; justify-content: center; align-items: center;">
+                        <div class="ssa-actions" style="text-align: center;">
+                          <button class="ssa-btn ssa-btn-cancel">Hold Payment</button>
+                          <button class="ssa-btn ssa-btn-save">Replace Damaged Item</button>
+                          <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
+                            <!-- Trigger Button -->
+                            <!-- Dropdown Menu -->
+                          </div>
+                        </div>
+                      </div>
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                 
+              
+                  </div>
+                  
+                  
+                  
+                 
+                  
+
+            </div>
+            
+            
+      </div>
+   </diV>
+   

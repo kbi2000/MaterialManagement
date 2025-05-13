@@ -1,0 +1,228 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">Purchase Order</div>
+          <div class="ssa-actions">
+            <button  class="ssa-btn ssa-btn-save" >
+                Download Pdf
+              </button>
+            <!-- <button class="ssa-btn ssa-btn-save">
+                 Submit Request
+              </button> -->
+              
+              <!-- <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button> -->
+            <!-- <button class="ssa-btn ssa-btn-cancel">Cancel</button> -->
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Purchase Order View</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper ">
+                  <div class="form-section-header">Header</div>
+                  <div class="form-grid-item purchase-management">
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Po Number:<span style="margin-left: 10px;">PO334234</span></label>
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Status:<span style="margin-left: 10px;">Request</span></label>                  
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label class="Purchase-lable">PO Date:<span style="margin-left: 10px;"></span>12/05/2025</span></label>
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Approve Date:<span style="margin-left: 10px;"></span>16/02/2025</span></label>
+                      </div>
+                   
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Vendor Name:<span style="margin-left: 10px;"></span>Sham</span></label>
+                                      
+                     </div>
+                     <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Vendor content:<span style="margin-left: 10px;"></span>Lorem </span></label>
+                                        
+                       </div>  <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Email:<span style="margin-left: 10px;"></span>Sham@gmail.com</span></label>
+                                        
+                       </div>
+                  </div>
+              
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Store & Deliveries Information</span>
+                   
+                  </div>
+                  
+                  <div class="form-grid-item purchase-management">
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Deliver To Store:<span style="margin-left: 10px;">Store Name</span></label>
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Delivery Address:<span style="margin-left: 10px;">Request Address</span></label>                  
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Expected Delivery Date:<span style="margin-left: 10px;"></span>12/05/2025</span></label>
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Delivery t&c:<span style="margin-left: 10px;"></span>T&C</span></label>
+                      </div>
+                   
+                   
+                    
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Item Order</span>
+                   
+                  </div>
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>Sr No</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Category
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Qty
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-request-cell">
+                            <span> 
+                             Rate
+                            </span>
+                          
+                          </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Total
+                          </span>
+                        
+                        </div>
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Rice </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> 6 
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">7523</span>
+                        </div>
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Dahi </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> 5 
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">6324</span>
+                        </div>
+                        
+                      </div>
+                      <hr>
+                      <div class="form-grid-item po-view" style="margin-top: 10px; text-align: ht;">
+                        <div class="form-input-wrapper">
+                          <label class="Purchase-lable">Sub Total:<span style="margin-left: 10px;">289786</span></label>
+                        </div>
+                        <div class="form-input-wrapper">
+                          <label class="Purchase-lable">Tax(18%):<span style="margin-left: 10px;">2443</span></label>                  
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label class="Purchase-lable">Total Payable:<span style="margin-left: 10px;"></span>Rs 2342</span></label>
+                          </div>
+                         
+                       
+                       
+                        
+                      </div>
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                    
+
+                   
+                 
+              
+                  </div>
+                  <div class="form-grid-item po-view" style="margin-top: 10px; text-align: ht;">
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Remarks:<span style="margin-left: 10px;">Lorem, ipsum dolor sit amet consectetur </span></label>
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label class="Purchase-lable">Created By:<span style="margin-left: 10px;">ipsum</span></label>                  
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label class="Purchase-lable">Approved By:<span style="margin-left: 10px;">Script</span> ipsum</span></label>
+                      </div>
+                     
+                   
+                   
+                    
+                  </div>
+                  
+                  
+                  
+                 
+                  
+
+            </div>
+            
+            
+      </div>
+   </diV>
+   

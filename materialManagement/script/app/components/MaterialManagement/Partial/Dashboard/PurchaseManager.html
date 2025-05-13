@@ -1,0 +1,505 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">Purchase Management</div>
+          <div class="ssa-actions">
+            <!-- <button  class="ssa-btn ssa-btn-save" ng-click="goToIndentSummary()">
+                Save Draft
+              </button>
+            <button class="ssa-btn ssa-btn-save">
+                 Submit Request
+              </button>
+              
+              <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button>
+            <button class="ssa-btn ssa-btn-cancel">Cancel</button> -->
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">Purchase Information</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper ">
+                  <div class="form-section-header">Top Matrix</div>
+                  <div class="recipe-item-table-wrapper">
+                    <div class="recipe-item-table">
+                      <!-- Header Row -->
+                      <div class="recipe-item-row recipe-item-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="recipe-item-cell" style="min-width: 100px;"> 
+                          <span>Indent</span>
+                         
+                        </div>
+                        <div class="recipe-item-cell"> 
+                          <span> 
+                            Po
+                          </span>
+                        </div>
+                        <div class="recipe-item-cell"> 
+                          <span> 
+                           Low Stock
+                          </span>
+                         
+                        </div>
+                        <div class="recipe-item-cell"> 
+                          <span> 
+                           Over Due Deliveries
+                          </span>
+                         
+                        </div>
+                        <div class="recipe-item-cell"> 
+                          <span> 
+                           Alert
+                          </span>
+                          
+                        </div>
+                      
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="recipe-item-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="recipe-item-cell" style="color:#0078d4 ; min-width: 100px;">  <i class="fas fa-check" style="margin-right: 5px;"></i><span class="text-wrap">8 Request</span></div>
+                        <div class="recipe-item-cell"><span class="text-wrap">8 Request </span>
+                        </div>
+                        <div class="recipe-item-cell"><span class="text-wrap">5 </span></div>
+                        <div class="recipe-item-cell"><span class="text-wrap">5 </span></div>
+
+                        <div class="recipe-item-cell"><span class="text-wrap">7 Item Recorded</span></div>
+                       
+                        
+                      </div>
+                      <div class="recipe-item-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="recipe-item-cell" style="color:#0078d4 ; min-width: 100px;">  <i class="fas fa-check" style="margin-right: 5px;"></i><span class="text-wrap">5 Request</span></div>
+                        <div class="recipe-item-cell"><span class="text-wrap">5 Request </span>
+                        </div>
+                        <div class="recipe-item-cell"><span class="text-wrap">4 </span></div>
+                        <div class="recipe-item-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="recipe-item-cell"><span class="text-wrap">4 Item Recorded</span></div>
+                       
+                        
+                      </div>
+                    
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                
+              
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Indent Request</span>
+                   
+                  </div>
+                  
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>ID</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Store
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Item Request
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-request-cell">
+                            <span> 
+                             Status
+                            </span>
+                          
+                          </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Action
+                          </span>
+                        
+                        </div>
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Rice </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Main </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Pending
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Created</span>
+                        </div>
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Maggie </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">F&B </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Pending
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Rejected</span>
+                        </div>
+                        
+                      </div>
+
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">3</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Milk </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">F&K </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">97 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Pending
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Approve</span>
+                        </div>
+                        
+                      </div>
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Purchase Order Request</span>
+                   
+                  </div>
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>PO #</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Vendor
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Item Count
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           PO Status
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-request-cell">
+                            <span> 
+                             Eta
+                            </span>
+                          
+                          </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Action
+                          </span>
+                        
+                        </div>
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Rice </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> 6 jan
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Send</span>
+                        </div>
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Panner </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">80 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> 5 jun
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Track</span>
+                        </div>
+                        
+                      </div>
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Low Stock Item</span>
+                   
+                  </div>
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>ID</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Item Name
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Current Qty
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Main Order Level
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Store
+                          </span>
+                          
+                        </div>
+                        
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Action
+                          </span>
+                        
+                        </div>
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Rice </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Indent</span>
+                        </div>
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Butter </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">58 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">67 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                       
+                        <div class="item-indent-request-cell"><span class="vendor-status active">Indent</span>
+                        </div>
+                        
+                      </div>
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Over Due Deliveries</span>
+                   
+                  </div>
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>PO #</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Vendor
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Store
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Expected Date
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Days Over Due
+                          </span>
+                          
+                        </div>
+                       
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Status
+                          </span>
+                        
+                        </div>
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Rice </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">50 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap"> 6 jan
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Send</span>
+                        </div>
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Milk </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">87 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">43 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap"> 5 jun
+                        </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Track</span>
+                        </div>
+                        
+                      </div>
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                  
+
+            </div>
+            
+            
+      </div>
+   </diV>
+   

@@ -52,6 +52,28 @@ app.controller('SidebarController', function ($scope,$location) {
     $scope.goToExpiryTrack=function(){
         $location.path('/expirytracking')
     }
+    $scope.goToPurchaseManager= function(){
+        $location.path('/purchasemanagement')
+    }
+    $scope.goToFB= function(){
+        $location.path('/F&B')
+
+    }
+    $scope.goToRecipe= function(){
+        $location.path('/Recipe')
+    }
+    $scope.goToPOView= function(){
+        $location.path('/PoView')
+    }
+    $scope.goToPOApprove= function(){
+        $location.path('/PoApprove')
+    }
+    $scope.goToPendingDelivery= function(){
+        $location.path('/pendingdeliveries')
+    }
+    $scope.goTogrn=function(){
+        $location.path('/grn')
+    }
 
 
     $scope.toggleMenu = function (menu) {

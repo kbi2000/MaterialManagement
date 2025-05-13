@@ -1,0 +1,355 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="ssa-title">F&B Consumtion</div>
+          <div class="ssa-actions">
+            <!-- <button  class="ssa-btn ssa-btn-save" ng-click="goToIndentSummary()">
+                Save Draft
+              </button>
+            <button class="ssa-btn ssa-btn-save">
+                 Submit Request
+              </button>
+              
+              <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button>
+            <button class="ssa-btn ssa-btn-cancel">Cancel</button> -->
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')">F&B Information</div>
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper ">
+                  <div class="form-section-header">Top Matrix</div>
+                  <div class="form-grid-item inventory-grid"> 
+                    <div class="form-input-wrapper">
+                      <label>From</label>
+                      <input type="date">
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label>To</label>
+                      <input type="date" 
+                     
+                      />
+                     
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label>Outlet</label>
+                      <select>
+                        <option>India</option>
+                        <option>USA</option>
+                      </select>
+                     
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label>Order Id</label>
+                      <input type="text" />
+                    </div>
+                    <div class="form-input-wrapper">
+                        <label>Menu Item</label>
+                        <select>
+                          <option>Rice</option>
+                          <option>USA</option>
+                        </select>
+                       
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>Ingridient</label>
+                        <select>
+                          <option>Black Paper</option>
+                          <option>Chilli</option>
+                        </select>
+                       
+                      </div>
+                      <div class="form-input-wrapper">
+                        <label>View Type</label>
+                        <select>
+                          <option>One</option>
+                          <option>Two</option>
+                        </select>
+                       
+                      </div>
+                     
+                     
+                     
+                     
+                  </div>
+              
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Order Wise View</span>
+                   
+                  </div>
+                  
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>Order ID</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Order Time
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Outlet
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                          Menu Item 
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Qty
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-request-cell">
+                            <span> 
+                             Status
+                            </span>
+                          
+                          </div>
+                       
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">7:30 PM </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Main </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Cold Drink </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">90</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Pending
+                        </span></div>
+                        
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">8:43 PM  </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">ABC </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Burger </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">76</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Success
+                        </span></div>
+                       
+                        
+                      </div>
+
+                      
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Menu Item Wise View</span>
+                   
+                  </div>
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>Menu Item</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Total Sold
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Ingridient
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Qty Used
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           UOM
+                          </span>
+                          
+                        </div>
+                        <div class="item-indent-request-cell">
+                            <span> 
+                             Status
+                            </span>
+                          
+                          </div>
+                      
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Veg Burger </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Bun </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Kg</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Success
+                        </span></div>
+                      
+                        
+                      </div>
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Coffee </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Milk </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">Lt</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap"> Success
+                        </span></div>
+                        
+                        
+                      </div>
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 20px;">
+                    <span>Ingridient Wise View</span>
+                   
+                  </div>
+                  <div class="item-indent-request-table-wrapper">
+                    <div class="item-indent-request-table">
+                      <!-- Header Row -->
+                      <div class="item-indent-request-row item-indent-request-header">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="min-width: 100px;"> 
+                          <span>Ingridient</span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell"> 
+                          <span> 
+                            Total Used
+                          </span>
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Unit
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           No Of Order
+                          </span>
+                         
+                        </div>
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Short Type
+                          </span>
+                          
+                        </div>
+                        
+                        <div class="item-indent-request-cell">
+                          <span> 
+                           Status
+                          </span>
+                        
+                        </div>
+                       
+                         
+                        
+                        
+                      </div>
+                  
+                      <!-- Data Row Example -->
+                      <div class="item-indent-request-row">
+                        <!-- <div class="item-indent-request-cell item-indent-request-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-request-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">Ketchup</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">45 </span>
+                        </div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">Slice</span></div>
+                        <div class="item-indent-request-cell"><span class="text-wrap">200 </span></div>
+
+                        <div class="item-indent-request-cell"><span class="text-wrap">20</span></div>
+                        
+                        <div class="item-indent-request-cell"><span class="text-wrap">Success</span>
+                        </div>
+                        
+                      </div>
+                   
+
+             
+                 
+                     
+                      <!-- You can repeat the .vendor-row above for each vendor -->
+                    </div>
+                   
+                 
+              
+                  </div>
+                 
+                
+                  
+
+            </div>
+            
+            
+      </div>
+   </diV>
+   

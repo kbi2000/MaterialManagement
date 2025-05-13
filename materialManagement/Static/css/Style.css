@@ -49,12 +49,16 @@ body {
     background-color: #28343c;
     color: white;
     display: flex;
-  overflow-y: auto;
+  /* overflow-y: auto; */
     flex-direction: column;
     padding-top: 10px;
 }
-.sidenav::-webkit-scrollbar {
-  display: none;              
+
+.side-nav-content{
+  overflow-y: auto;
+}
+.side-nav-content::-webkit-scrollbar {
+  display: none ;              
 }
 .sidebar-header {
     padding: 15px;
@@ -845,7 +849,10 @@ border-bottom-right-radius: 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     max-width: 100%;
     /* padding-bottom: 200px; */
-    min-height: 77vh !important;
+    /* min-height: 77vh !important; */
+    max-height: 77vh;
+    overflow-y: auto; /* Enables vertical scrolling when content overflows */
+
 
     /* margin: auto; */
     margin-left: 20px;
@@ -954,6 +961,18 @@ border-bottom-right-radius: 0;
       grid-template-columns: repeat(2, 1fr) !important; 
     }
   }
+  .form-grid-item.recipe-item-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+
+  }
+  @media (max-width: 992px) {
+    .form-grid-item.recipe-item-grid {
+      grid-template-columns: repeat(2, 1fr) !important; 
+    }
+  }
   
   @media (max-width: 781px) {
     .form-grid-item.menu-item-grid {
@@ -975,7 +994,61 @@ border-bottom-right-radius: 0;
   }
   
   @media (max-width: 781px) {
-    .form-grid-item.create-indent {
+    .form-grid-item.purchase-management {
+      grid-template-columns: 1fr !important; 
+      gap: 12px; 
+    }
+  }
+  .form-grid-item.purchase-management{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+
+  }
+  @media (max-width: 992px) {
+    .form-grid-item.purchase-management {
+      grid-template-columns: repeat(2, 1fr) !important; 
+    }
+  }
+  @media (max-width: 781px) {
+    .form-grid-item.purchase-management {
+      grid-template-columns: 1fr !important; 
+      gap: 12px; 
+    }
+  }
+  .form-grid-item.grn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+
+  }
+  @media (max-width: 992px) {
+    .form-grid-item.grn {
+      grid-template-columns: repeat(2, 1fr) !important; 
+    }
+  }
+  @media (max-width: 781px) {
+    .form-grid-item.grn {
+      grid-template-columns: 1fr !important; 
+      gap: 12px; 
+    }
+  }
+  .form-grid-item.po-view{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+
+  }
+  @media (max-width: 992px) {
+    .form-grid-item.po-view {
+      grid-template-columns: repeat(1, 1fr) !important; 
+    }
+  }
+  @media (max-width: 781px) {
+    .form-grid-item.po-view {
       grid-template-columns: 1fr !important; 
       gap: 12px; 
     }
@@ -3252,6 +3325,13 @@ border-bottom-right-radius: 0;
     font-size: smaller;
     font-family: 'Segoe UI', sans-serif;
   }
+  .expiry-table.Po-Approve {
+    display: flex;
+    flex-direction: column;
+    min-width: 1000px !important;
+    font-size: smaller;
+    font-family: 'Segoe UI', sans-serif;
+  }
   
   .expiry-row {
     display: flex;
@@ -3282,6 +3362,23 @@ border-bottom-right-radius: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .expiry-cell.Po-Approve {
+    flex: 2;
+    padding: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    min-width: 200.5px; 
+    max-width: 200.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .expiry-checkbox.Po-Approve {
+    flex: 0 0 40px;
+    text-align: center;
+    min-width: 30px !important;
   }
   .text-wrap {
     word-break: break-word;
@@ -3330,3 +3427,300 @@ border-bottom-right-radius: 0;
   }
   
   /* end */
+  /* //popup-table/// */
+  .popupexpiry-table-wrapper {
+    overflow-x: auto;
+    background: white;
+    padding: 0px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-height: 75vh;
+  }
+  .popupexpiry-table-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .popupexpiry-table {
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+    font-size: smaller;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .popupexpiry-row {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #e1e7ec; */
+    background: #fff;
+    padding: 1px 0;
+  
+  }
+  
+  .popupexpiry-header {
+    position: sticky;
+    top: 0;
+    background: #e3ebed;
+    font-weight: 400;
+    z-index: 1;
+    height: 40px;
+  }
+  
+  .popupexpiry-cell {
+    flex: 2;
+    padding: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    min-width: 120px; 
+    max-width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-wrap {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex: 1;
+  }
+  
+  /* For column that needs more width like 'Address' */
+  .popupexpiry-cell.address {
+    flex: 2;
+  }
+  
+  /* For Status button */
+  .popupexpiry-cell.status {
+    min-width: 8.5px;
+    max-width: 8.5px;
+    text-align: center;
+  }
+  
+  .store-cell:last-child {
+    border-right: none;
+  }
+  
+  .popupexpiry-checkbox {
+    flex: 0 0 40px;
+    text-align: center;
+    min-width: 30px !important;
+  }
+  
+  .popupexpiry-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+  }
+  
+  .popupexpiry-status.active {
+    background-color: #28a745;
+  }
+  
+  .popupexpiry-status.inactive {
+    background-color: #dc3545;
+  }
+  
+  /* //end// */
+.Purchase-lable{
+  font-weight: bold !important;
+
+  }
+  /* item-indent-request */
+  .item-indent-request-table-wrapper {
+    overflow-x: auto;
+    background: white;
+    padding: 0px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-height: 50vh;
+  }
+  .item-indent-request-table-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .item-indent-request-table {
+    display: flex;
+    flex-direction: column;
+    min-width: 1300px;
+    font-size: smaller;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .item-indent-request-row {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #e1e7ec; */
+    background: #fff;
+    padding: 1px 0;
+  
+  }
+  
+  .item-indent-request-header {
+    position: sticky;
+    top: 0;
+    background: #e3ebed;
+    font-weight: 400;
+    z-index: 1;
+    height: 40px;
+  }
+  
+  .item-indent-request-cell {
+    flex: 2;
+    padding: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    min-width: 220.5px; 
+    max-width: 220.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-wrap {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex: 1;
+  }
+  
+  /* For column that needs more width like 'Address' */
+  .item-indent-request-cell.address {
+    flex: 2;
+  }
+  
+  /* For Status button */
+  .item-indent-request-cell.status {
+    min-width: 8.5px;
+    max-width: 8.5px;
+    text-align: center;
+  }
+  
+  .store-cell:last-child {
+    border-right: none;
+  }
+  
+  .item-indent-request-checkbox {
+    flex: 0 0 40px;
+    text-align: center;
+    min-width: 30px !important;
+  }
+  
+  .item-indent-request-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+  }
+  
+  .item-indent-request-status.active {
+    background-color: #28a745;
+  }
+  
+  .item-indent-request-status.inactive {
+    background-color: #dc3545;
+  }
+  /* end */
+  /* //recipe// */
+  .recipe-item-table-wrapper {
+    overflow-x: auto;
+    background: white;
+    padding: 0px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    max-height: 75vh;
+  }
+  .recipe-item-table-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .recipe-item-table {
+    display: flex;
+    flex-direction: column;
+    min-width: 1500px;
+    font-size: smaller;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .recipe-item-row {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #e1e7ec; */
+    background: #fff;
+    padding: 1px 0;
+  
+  }
+  
+  .recipe-item-header {
+    position: sticky;
+    top: 0;
+    background: #e3ebed;
+    font-weight: 400;
+    z-index: 1;
+    height: 40px;
+  }
+  
+  .recipe-item-cell {
+    flex: 2;
+    padding: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    min-width: 280.5px; 
+    max-width: 280.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-wrap {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    flex: 1;
+  }
+  
+  /* For column that needs more width like 'Address' */
+  .recipe-item-cell.address {
+    flex: 2;
+  }
+  
+  /* For Status button */
+  .recipe-item-cell.status {
+    min-width: 8.5px;
+    max-width: 8.5px;
+    text-align: center;
+  }
+  
+  .store-cell:last-child {
+    border-right: none;
+  }
+  
+  .recipe-item-checkbox {
+    flex: 0 0 40px;
+    text-align: center;
+    min-width: 30px !important;
+  }
+  
+  .recipe-item-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+  }
+  
+  .recipe-item-status.active {
+    background-color: #28a745;
+  }
+  
+  .recipe-item-status.inactive {
+    background-color: #dc3545;
+  }
+  
+  /* //end// */
