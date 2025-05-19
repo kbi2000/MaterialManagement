@@ -851,6 +851,7 @@ border-bottom-right-radius: 0;
     /* padding-bottom: 200px; */
     /* min-height: 77vh !important; */
     max-height: 77vh;
+    min-height: 78vh;
     overflow-y: auto; /* Enables vertical scrolling when content overflows */
 
 
@@ -2370,6 +2371,11 @@ border-bottom-right-radius: 0;
   text-align: center;
   min-width: 30px !important;
 }
+.menu-item-sno {
+  flex: 0 0 40px;
+  text-align: center;
+  min-width: 80px !important;
+}
 
 .menu-item-status {
   padding: 5px 10px;
@@ -2799,8 +2805,8 @@ border-bottom-right-radius: 0;
   word-wrap: break-word;
   white-space: normal;
   overflow-wrap: break-word;
-  min-width: 205.5px; 
-  max-width: 205.5px;
+  min-width: 185.5px; 
+  max-width: 185.5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2867,7 +2873,7 @@ border-bottom-right-radius: 0;
 .menu-item-material-transfer-table {
   display: flex;
   flex-direction: column;
-  min-width: 1700px;
+  min-width: 1400px;
   font-size: smaller;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -2896,8 +2902,8 @@ border-bottom-right-radius: 0;
   word-wrap: break-word;
   white-space: normal;
   overflow-wrap: break-word;
-  min-width: 200.5px; 
-  max-width: 200.5px;
+  min-width: 180.5px; 
+  max-width: 180.5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3724,3 +3730,342 @@ border-bottom-right-radius: 0;
   }
   
   /* //end// */
+  .recipe-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .recipe-select-box {
+    display: flex;
+    flex-direction: column; /* This makes items appear one per line */
+    gap: 8px;
+    max-height: 150px !important;
+    overflow-y: auto;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    width: 400px;
+  }
+  select{
+    min-width: 80px;
+  }
+
+  .recipe-select-item {
+    /* padding: 8px 12px; */
+    /* border: 1px solid #999; */
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    user-select: none;
+    transition: background 0.2s;
+  }
+
+  .recipe-select-item:hover {
+    background-color: #e0e0e0;
+  }
+
+  .recipe-select-item.recipe-selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  /* //tax-summary-box  */
+  .tax-summary-box {
+    /* border: 1px solid #000; */
+    padding: 16px;
+    width: 550px;
+    margin-top: 20px;
+  }
+  
+  .tax-summary-box h4 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .tax-summary-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .tax-label {
+    width: 100px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  
+  .tax-prefix {
+    margin-right: 4px;
+    font-size: 12px;
+
+  }
+  
+  .tax-input,
+  .tax-select {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 12px;
+
+  }
+  /* //end// */
+  /* Collapse Container */
+.collapse-section {
+  width: 100%;
+  margin-left: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Header Style */
+.form-section-header {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  /* background: #f5f5f5; */
+  /* padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 9%; */
+}
+
+/* Hidden checkbox */
+.collapse-toggle {
+  display: none;
+}
+
+/* Collapse content (hidden by default) */
+.collapse-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fff;
+  padding: 0 16px;
+}
+
+/* Show content when checkbox is checked */
+.collapse-toggle:checked + .form-section-header + .collapse-content {
+  max-height: 200px; /* adjust based on content */
+  padding: 10px 16px;
+}
+
+/* Rotate arrow on toggle */
+.collapse-toggle:checked + .form-section-header .arrow {
+  transform: rotate(180deg);
+  transition: transform 0.1s ease;
+}
+
+/* < multi-select> */
+.selecto-eleganza {
+  position: relative;
+  width: 250px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0px 0;
+  margin-left: 20px;
+}
+.selecto-eleganza.store {
+  position: relative;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0px 0;
+  margin-left: 0px;
+}
+
+.selecto-eleganza .select-box {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  /* border-radius: 6px; */
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.selecto-eleganza.store .select-box {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  /* border-radius: 6px; */
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.selecto-eleganza .options-list {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  /* border-radius: 6px; */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.selecto-eleganza.active .options-list {
+  max-height: 200px;
+  opacity: 1;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.search-box-po {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+.search-box-po input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  /* border-radius: 4px; */
+  font-size: 13px;
+}
+
+.options-list label {
+  display: block;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.select-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  /* border-radius: 6px; */
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 16px;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+@media (max-width: 781px) {
+  .responsive-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .selecto-eleganza,
+  .ssa-btn-save-po {
+    width: 100%;
+  }
+  .ssa-btn-save-po{
+    margin-top: 20px;
+  }
+
+  .label-text {
+    margin-bottom: 4px;
+  }
+}
+/* //end// */
+/* COllapse */
+.my-collapse-box {
+  font-family: sans-serif;
+  /* background-color: #f0f0f0; */
+}
+
+.my-collapse-box details {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.my-collapse-box summary {
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.my-collapse-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.my-collapse-box summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.my-collapse-box details[open] summary::before {
+  transform: rotate(90deg);
+}
+select{
+  background: white;
+}
+/* <<select>> */
+.dropdown-wrapper-custom {
+  position: relative;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-header-custom {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  /* background-color: #f9f9f9; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+
+}
+
+.dropdown-content-custom {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  z-index: 10;
+  display: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-content-custom.show {
+  display: block;
+}
+
+.dropdown-content-custom input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.dropdown-option-custom {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.dropdown-option-custom:hover {
+  background-color: #eee;
+}
+
+.material-icons {
+  font-size: 12px;
+}

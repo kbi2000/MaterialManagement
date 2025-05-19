@@ -56,24 +56,68 @@
                     
                     <div class="form-input-wrapper">
                       <label>Store</label>
-                      <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
-                      </select>                    
+                     
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "Raw"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            Raw
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Sellable
+                     </div>
                     </div>
-                    <div class="form-input-wrapper">
-                        <label>Requestor Name</label>
-                        <input type="text" value="Sumit Sham" />
-                      </div>
+                     </div>                      
+                    </div>
+                   
                       
                    
                     <div class="form-input-wrapper">
                       <label>Return Type</label>
-                      <select>
-                        <option>Return</option>
-                        <option>Replacement</option>
-                      </select>                   
+                      
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                          <span>{{ selectedItem1 || "Return"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            Return
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Replacement
                      </div>
+                    </div>
+                     </div>   
+                                       
+                     </div>
+                     <div class="form-input-wrapper">
+                      <label>Category</label>
+                      <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                        <span>{{ selectedItem1 || "Veg"  }}</span>
+                        <span class="material-icons arrow-icon">
+                          {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                        </span>                        </div>
+                      <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                        <input type="text" ng-model="searchText" placeholder="Search...">
+                        <div class="dropdown-option-custom">
+                          
+                          Veg
+                        </div>
+                        <div class="dropdown-option-custom">
+                          Replacement
+                   
+                  </div>
+                   </div>                     </div>
                     <div class="form-input-wrapper">
                       <label>From</label>
                       <input type="date" value="" />
@@ -83,18 +127,8 @@
                         <label>To</label>
                         <input type="date" value="" />
                       </div>
-                      <div class="form-input-wrapper">
-                        <label>Item</label>
-                        <select>
-                            <option>Rice</option>
-                            <option>Replacement</option>
-                          </select>                  </div>
-                      <div class="form-input-wrapper">
-                        <label>Category</label>
-                        <select>
-                            <option>Veg</option>
-                            <option>Replacement</option>
-                          </select>                  </div>
+                      
+                    
                   </div>
                   
               
@@ -133,16 +167,17 @@
                         </div>
                         <div class="menu-item-material-transfer-cell">
                           <span> 
+                            Qty
+                          </span>
+                        
+                        </div>
+                        <div class="menu-item-material-transfer-cell">
+                          <span> 
                            UOM
                           </span>
                           
                         </div>
-                        <div class="menu-item-material-transfer-cell">
-                            <span> 
-                              Qty
-                            </span>
-                          
-                          </div>
+                        
                         <div class="menu-item-material-transfer-cell">
                           <span> 
                             Discrepancy Type
@@ -174,16 +209,21 @@
                         <div class="menu-item-material-transfer-cell"><span class="text-wrap">1232 </span>
                         </div>
                         <div class="menu-item-material-transfer-cell"><span class="text-wrap">Rice </span></div>
-                        <div class="menu-item-material-transfer-cell"><span class="text-wrap">one</span></div>
-                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> kg
-                        </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap">Return</span></div>
+                       
                         <div class="menu-item-material-transfer-cell"><span class="text-wrap"> 87
                         </span></div>
-                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> two
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> kg
                         </span></div>
-                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> ok
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> Damaged
                         </span></div>
-                        <div class="menu-item-material-transfer-cell"><span class="vendor-status active">Search</span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="text-wrap"> Pending
+                        </span></div>
+                        <div class="menu-item-material-transfer-cell"><span class="vendor-status active" ng-click="showOutletModal = true" 
+                          style="display: inline-flex; align-items: center; background-color: #28a745; color: white; padding: 5px 10px; border-radius: 20px; font-size: 14px; cursor: pointer;">
+                      <span class="material-symbols-outlined" style="margin-right: 5px;">search</span>
+                      View
+                    </span></div>
                       </div>
                  
                      
@@ -198,7 +238,8 @@
             
       </div>
    </diV>
-   <div id="returnReplacementPopup" ng-show="false">
+   <!-- ///view click// -->
+   <div id="returnReplacementPopup" ng-show="showOutletModal">
     <div class="popup-content">
       <h3>Return/Replacement Details</h3>
       <div class="form-grid">
@@ -256,7 +297,7 @@
   
         <div class="popup-buttons full-width">
           <button>Approve</button>
-          <button>Reject</button>
+          <button ng-click="showOutletModal = false">Reject</button>
           <button>Request Replacement</button>
         </div>
       </div>

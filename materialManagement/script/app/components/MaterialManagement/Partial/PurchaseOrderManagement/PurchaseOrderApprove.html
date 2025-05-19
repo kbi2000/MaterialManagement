@@ -2,7 +2,7 @@
     <top-bar></top-bar>
   
       <div class="ssa-container">
-          <div class="ssa-title">Purchase Order Approve</div>
+          <div class="ssa-title">Purchase Order Approval</div>
           <div class="ssa-actions">
             <button class="ssa-btn ssa-btn-cancel">Reset</button>
               <button class="ssa-btn ssa-btn-save">
@@ -60,10 +60,44 @@
                     
                     <div class="form-input-wrapper">
                       <label>Vendor</label>
-                      <select>
-                        <option>Shanti Pvt Co</option>
-                        <option>Shakti lt co</option>
-                      </select>                    
+                     
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "Shanti Pvt Co"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            Shanti Pvt Co
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Shakti lt co
+                     </div>
+                    </div>
+                     </div>                    
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label>Store</label>
+                      
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                          <span>{{ selectedItem1 || "F&B"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            F&B 
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Shakti lt co
+                     </div>
+                    </div>
+                     </div>                    
                     </div>
                   
                       
@@ -81,18 +115,19 @@
                       <div class="form-input-wrapper">
                         <label>Approval Status</label>
                         <select>
-                            <option>Yes</option>
-                            <option>No</option>
+                            <option>Approved</option>
+                            <option>Pending</option>
+                            <option>Rejected</option>
+
                           </select>                  </div>
                   </div>
                   
               
-                  <!-- <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                    <span>Item Details</span>
-                    <div>
-                        <button class="new-vendor"><i class="fas fa-plus"></i> Add</button>
-                    </div>
-                  </div> -->
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Purchase Order List</span>
+                   
+                  </div>
+
                   
                   <div class="expiry-table-wrapper">
                     <div class="expiry-table Po-Approve">
@@ -100,7 +135,7 @@
                       <div class="expiry-row expiry-header">
                         <div class="expiry-cell Po-Approve expiry-checkbox"><input type="checkbox" /></div>
                         <div class="expiry-cell Po-Approve"> 
-                          <span>Po Number</span>
+                          <span>PO Number</span>
                          
                         </div>
                         <div class="expiry-cell Po-Approve"> 
@@ -156,7 +191,7 @@
                         <div class="expiry-cell Po-Approve"><span class="text-wrap">Test 1</span></div>
                         <div class="expiry-cell Po-Approve"><span class="text-wrap">6500</span></div>
                         <div class="expiry-cell Po-Approve"><span class="text-wrap">Pending</span></div>
-                        <div class="expiry-cell Po-Approve"><span class="vendor-status active">View</span></div>
+                        <div class="expiry-cell Po-Approve"><span class="vendor-status active" ng-click="goToPOView()">View</span></div>
 
 
 

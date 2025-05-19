@@ -35,10 +35,24 @@
                   <div class="form-grid-item store-grid">
                     <div class="form-input-wrapper">
                       <label>Store Type</label>
-                      <select>
-                        <option>Central Store</option>
-                        <option>Kitchen Store</option>
-                      </select>                    </div>
+                        
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "Central Store"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            Central Storee
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Kitchen Store
+                     </div>
+                    </div>
+                     </div>                
+                     </div>
                     <div class="form-input-wrapper">
                       <label>Store Name</label>
                       <input type="text" id="StoreName"
@@ -110,10 +124,27 @@
                    
                     <div class="form-input-wrapper">
                       <label>Parent Store</label>
-                      <select>
-                        <option>Delhi Store</option>
-                        <option>Kanpur </option>
-                      </select>
+                      <div class="selecto-eleganza store" ng-class="{'active': dropdownOpen}">
+                        <div class="select-box" ng-click="toggleDropdown()">
+                          <span>
+                            {{ getSelectedStore().length > 0 ? getSelectedStore().join(', ') : 'Select Store' }}
+                          </span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>
+                        </div>
+                  
+                        <div class="options-list">
+                          <div class="search-box-po">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                          </div>
+                          <div>
+                            <label ng-repeat="item in store | filter:searchText">
+                              <input type="checkbox" ng-model="item.selected"> {{ item.name }}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
 
                      
                     </div>

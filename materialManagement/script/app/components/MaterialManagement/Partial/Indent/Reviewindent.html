@@ -5,13 +5,13 @@
           <div class="ssa-title">Arrove Indent</div>
           <div class="ssa-actions">
             <button class="ssa-btn ssa-btn-save">
-                 Approval All
+                 Approve All
               </button>
               <button class="ssa-btn ssa-btn-save">
-                Partial Approval
+                Partial Approve
              </button>
              <button class="ssa-btn ssa-btn-save">
-                Rejected Indent
+                Reject Indent
              </button>
             <button class="ssa-btn ssa-btn-cancel">Cancel</button>
            
@@ -43,10 +43,23 @@
                     </div>
                     <div class="form-input-wrapper">
                       <label>Requestor Store</label>
-                      <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
-                      </select>                    
+                     
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "Raw"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            Raw
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Sellable
+                     </div>
+                    </div>
+                     </div>                   
                     </div>
                     <div class="form-input-wrapper">
                         <label>Requestor Name</label>
@@ -57,20 +70,45 @@
                         <input type="date" value="" />
                       </div>
                    
-                    <div class="form-input-wrapper">
-                      <label>Supplier Store</label>
-                      <select>
-                        <option>External Vendor</option>
-                        <option>Sellable</option>
-                      </select>                   
-                     </div>
-                    <div class="form-input-wrapper">
-                      <label>Status</label>
-                      <select>
-                        <option>Pending</option>
-                        <option>Sellable</option>
-                      </select>
-                    </div>
+                      <div class="form-input-wrapper">
+                        <label>Supplier Store</label>
+                       
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || "External Vendor"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                              External Vendor
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Sellable
+                       </div>
+                      </div>
+                       </div>                   
+                       </div>
+                       <div class="form-input-wrapper">
+                        <label>Status </label>
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || "Pending"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                              External Vendor
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Sellable
+                       </div>
+                      </div>
+                       </div>     
+                      </div>
                   </div>
               
                   <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -112,7 +150,7 @@
                         </div>
                         <div class="item-indent-cell">
                             <span> 
-                                Approve
+                                Approved
                             </span>
                           
                           </div>

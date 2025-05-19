@@ -62,14 +62,14 @@
                     </span>
                 </div>
                 <div class="submenu" ng-show="isMenuActive('purchaseManagement')">
-                    <div class="menu-item"  ng-click="goToCreateIndent()">Credit Indent</div>
+                    <div class="menu-item"  ng-click="goToCreateIndent()">Create Indent</div>
                     <div class="menu-item" ng-click="goToApproveIndent()">Approvals Indent</div>
                     <div class="menu-item" ng-click="goToIndentSummary()">Post Approval Indent Summary</div>
-                    <div class="menu-item">Create PO From Indents</div>
+                    <div class="menu-item" ng-click="goToPOIndent()">Create PO From Indents</div>
                     <div class="menu-item" ng-click="goToPOApprove()">Purchase Order Approval</div>
                     <div class="menu-item" ng-click="goToPendingDelivery()">Pending Deliveries</div>
                     <div class="menu-item" ng-click="goTogrn()">Create GRN</div>
-                    <div class="menu-item">Vendor Invoice Entry</div>
+                    <div class="menu-item" ng-click="goToVendorInvice()">Vendor Invoice Entry</div>
                     <div class="menu-item">Invoice Matching</div>
                     <div class="menu-item">Invoice Approval</div>
                     <div class="menu-item">Discrepancy Resolution </div>
@@ -127,11 +127,11 @@
                     </span>
                 </div>
                 <div class="submenu" ng-show="isMenuActive('MaterialManagement')">
-                    <div class="menu-item"  ng-click="goToCreateIndent()">Credit Indent</div>
-                    <div class="menu-item" ng-click="goToApproveIndent()">Approvals Indent</div>
+                    <div class="menu-item"  ng-click="goToCreateIndent()">Create Indent</div>
+                    <div class="menu-item" ng-click="goToApproveIndent()">Approved Indent</div>
                     <div class="menu-item" ng-click="goToIndentSummary()">Post Approval Indent Summary</div>
                     <div class="menu-item" ng-click="goToMaterialTransfer()">Material Transfer</div>
-                    <div class="menu-item" ng-click="goToIssueNote()">Issue Notes</div>
+                    <div class="menu-item" ng-click="goToIssueNote()">Issue Note</div>
                     <div class="menu-item" ng-click="goToD()">Material Receipt Acknowledegemnt</div>
                     <div class="menu-item" ng-click="goToDR()">Descrepancy Resolution & Inventory Adjustment</div>
     
@@ -203,7 +203,7 @@
                 <div class="menu-item">Purchase Order Approvals</div>
                 <div class="menu-item">Purchase Invoice</div>
                 <div class="menu-item">Vender Ledger</div>
-                <div class="menu-item">Credit Notes</div>
+                <div class="menu-item">Create Notes</div>
             </div>
             <div class="menu-item expandable" ng-click="toggleMenu('Setup')" ng-class="{'active': isMenuActive('Setup')}">
                 <span class="nav-icon"> 
@@ -220,12 +220,14 @@
             </div>
             <div class="submenu" ng-show="isMenuActive('Setup')">
                 <div class="menu-item" ng-click="goToItem()">Items</div>
-                <div class="menu-item" ng-click="goToVendor()">Vender</div>
+                <div class="menu-item" ng-click="goToVendor()">Vendor</div>
                 <div class="menu-item" ng-click="goToStore()">Stores</div>
                 <div class="menu-item" ng-click="goToOutlet()">Outlets</div>
                 <div class="menu-item" ng-click="goToMenu()">Menu-Items</div>
-                <!-- <div class="menu-item" ng-click="goToRecipe()">Recipe-Details</div> -->
-                <div class="menu-item" ng-click="">Recipe-Details</div>
+                <div class="menu-item" ng-click="goToIndent()">Indent</div>
+
+                <div class="menu-item" ng-click="goToRecipe()">Recipe-Details</div>
+                <!-- <div class="menu-item" ng-click="">Recipe-Details</div> -->
 
             </div>
         </div>

@@ -2,7 +2,7 @@
     <top-bar></top-bar>
   
       <div class="ssa-container">
-          <div class="ssa-title">F&B Consumtion</div>
+          <div class="ssa-title">F&B Consumption</div>
           <div class="ssa-actions">
             <!-- <button  class="ssa-btn ssa-btn-save" ng-click="goToIndentSummary()">
                 Save Draft
@@ -23,7 +23,7 @@
           <div class="changale-tabs">
             <div class="changale-tab"
             ng-class="{active: selectedTabItem === 'items'}"
-            ng-click="selectTab('items')">F&B Information</div>
+            ng-click="selectTab('items')">F&B Consumption</div>
               <!-- <div class="changale-tab"
                    ng-class="{active: selectedTabItem === 'vendor'}"
                    ng-click="selectTab('vendor')">Vendor</div> -->
@@ -36,7 +36,7 @@
             </div>
             <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
               <div class="form-card-wrapper ">
-                  <div class="form-section-header">Top Matrix</div>
+                  <div class="form-section-header"></div>
                   <div class="form-grid-item inventory-grid"> 
                     <div class="form-input-wrapper">
                       <label>From</label>
@@ -80,8 +80,10 @@
                       <div class="form-input-wrapper">
                         <label>View Type</label>
                         <select>
-                          <option>One</option>
-                          <option>Two</option>
+                          <option>OrderWise</option>
+                          <option>Menu ItemWise</option>
+                          <option>Ingridient Wise</option>
+
                         </select>
                        
                       </div>
@@ -300,7 +302,7 @@
                         </div>
                         <div class="item-indent-request-cell">
                           <span> 
-                           Short Type
+                           Shortage 
                           </span>
                           
                         </div>

@@ -17,6 +17,10 @@ app.config(function($routeProvider) {
         templateUrl: './script/app/components/MaterialManagement/Partial/Vendor/addvendor.html',
         controller: 'ConfigurationController'
     }) 
+    .when('/vendorinvoiceentry', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Vendor/VendorInvoiceEntry.html',
+        controller: 'ConfigurationController'
+    }) 
     .when('/item', {
         templateUrl: './script/app/components/MaterialManagement/Partial/AddItem/items.html',
         controller: 'ConfigurationController'
@@ -127,6 +131,14 @@ app.config(function($routeProvider) {
     }) 
     .when('/grn', {
         templateUrl: './script/app/components/MaterialManagement/Partial/GRN/craetegrn.html',
+        controller: 'ConfigurationController'
+    })
+    .when('/poindent', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Indent/PoIndent.html',
+        controller: 'ConfigurationController'
+    })
+    .when('/indentlist', {
+        templateUrl: './script/app/components/MaterialManagement/Partial/Indent/Indentlist.html',
         controller: 'ConfigurationController'
     })
     .otherwise({

@@ -2,48 +2,22 @@
     <top-bar></top-bar>
        <div class="container">
            <div class="header">
-               <h2>Outlet <span class="count">(12)</span></h2>
+               <h2>All Indent <span class="count">(12)</span></h2>
                <div class="actions">
                    <div class="search-box-main-page">
                        <i class="fas fa-search"></i>
-                       <input type="text" placeholder="Search in Outlet">
+                       <input type="text" placeholder="Search in Indent">
                    </div>
-                   <button class="new-vendor" ng-click="showOutletModal = true"><i class="fas fa-plus"></i> New Outlet</button>
-                   <div class="outlet-modal" ng-show="showOutletModal">
-                    <div class="outlet-modal-content">
-                      
-                      <label for="outletName">Outlet Name</label>
-                      <input type="text" id="outletName" placeholder="Enter Outlet Name">
-                  
-                      <label for="storeName">Store Name</label>
-                      <select id="storeName">
-                        <option>Select Store</option>
-                        <option>Store A</option>
-                        <option>Store B</option>
-                      </select>
-                  
-                      <label for="storeRef">Store Pref. No.</label>
-                      <select id="storeRef">
-                        <option>Select Pref No.</option>
-                        <option>001</option>
-                        <option>002</option>
-                      </select>
-                  
-                      <div class="outlet-modal-buttons">
-                        <button class="outlet-save-btn">Save</button>
-                        <button class="outlet-cancel-btn" ng-click="showOutletModal = false">Cancel</button>
-                      </div>
-                    </div>
-                  </div>
-                   <div ng-controller="ConfigurationController" class="dropdown-wrapper">
+                   <button class="new-vendor" ng-click="goToCreateIndent()"><i class="fas fa-plus"></i> New Indent</button>
+                   <!-- <div ng-controller="ConfigurationController" class="dropdown-wrapper"> -->
                        <!-- Trigger Button -->
-                       <button class="more-options" ng-click="toggleDropdown($event)">⋯</button>
+                       <!-- <button class="more-options" ng-click="toggleDropdown($event)">⋯</button> -->
                      
                        <!-- Dropdown Menu -->
                        <div class="dropdown-menu" ng-show="showDropdown">
                          <ul>
                            <li><a href="#" class="inline-link"><span class="material-symbols-outlined">csv</span> <span class="view-more-name">Export to CSV</span> </a></li> 
-                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Outlet</span> </a></li>
+                           <li><a href="#" class="inline-link"><span class="material-symbols-outlined">publish</span><span class="view-more-name">Import Indent</span> </a></li>
                            <li><a href="#" class="inline-link"><span class="material-symbols-outlined">
                              download
                              </span><span class="view-more-name">Download Import Format</span></a></li>
@@ -54,19 +28,18 @@
                              
                          </ul>
                        </div>
-                     </div>
+                     <!-- </div> -->
                              </div>
            </div>
        </div>
        <div class="filter-container">
            <span class="filter-label">Quick Filters :</span>
            
-           <button class="filter-button">Recently Added</button>
-           <button class="filter-button">Oldest</button>
-           <!-- <button class="filter-button">Contract to be expired</button>
-           <button class="filter-button">To be expired</button>
-           <button class="filter-button">Missing Details</button>
-           <button class="filter-button">Missing GSTN</button> -->
+           <button class="filter-button">All Approved</button>
+           <button class="filter-button">All Rejected</button>
+           <button class="filter-button">All Partially Rejected</button>
+           <button class="filter-button">Partially  Fulfilled </button>
+          
        
            <span class="filter-icon" ng-click="toggleFilterPanel()"><span class="material-symbols-outlined">
                filter_alt
@@ -108,35 +81,57 @@
          </div>
        
        <!-- Table Container -->
-       <div class="outlet-table-wrapper">
-         <div class="outlet-table">
+       <div class="menu-item-table-wrapper">
+         <div class="menu-item-table">
            <!-- Header Row -->
-           <div class="outlet-row outlet-header">
-             <div class="outlet-cell outlet-checkbox"><input type="checkbox" /></div>
-             
-             <div class="outlet-cell"> 
+           <div class="menu-item-row menu-item-header">
+             <div class="menu-item-cell menu-item-sno">S.No</div>
+             <div class="menu-item-cell"> 
+               <span>Indent No.</span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="menu-item-cell"> 
                <span> 
-                 Outlet Name
+                 Requester Store
                </span>
                <span>
                  <i class="fa fa-arrow-down" aria-hidden="true"></i>
                </span> 
              </div>
-             <div class="outlet-cell">
+             <div class="menu-item-cell">
                <span> 
-                Store Name
+                Requester Name
                </span>
                <span>
                  <i class="fa fa-arrow-down" aria-hidden="true"></i>
                </span> 
              </div>
-             <div class="outlet-cell">
+             <div class="menu-item-cell">
                <span> 
-                Store Preference No
+                Requester Date
                </span>
-             
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
              </div>
-            
+             <div class="menu-item-cell">
+               <span> 
+                Supplier Store
+               </span>
+               <span>
+                 <i class="fa fa-arrow-down" aria-hidden="true"></i>
+               </span>
+             </div>
+             <div class="menu-item-cell">
+               <span> 
+                Status
+               </span>
+               <span>
+                 <!-- <i class="fa fa-arrow-down" aria-hidden="true"></i> -->
+               </span>
+             </div>
             
              
              
@@ -145,12 +140,14 @@
            </div>
        
            <!-- Data Row Example -->
-           <div class="outlet-row">
-             <div class="outlet-cell outlet-checkbox"><input type="checkbox" /></div>
-             <div class="outlet-cell" style="color:#0078d4 ;"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
-             <div class="outlet-cell"><span class="text-wrap">Hakuna Matana</span></div>
-             <div class="outlet-cell"><span class="text-wrap">1</span></div>
-           
+           <div class="menu-item-row">
+             <div class="menu-item-cell menu-item-sno">1</div>
+             <div class="menu-item-cell" style="color:#0078d4 ;"><span class="text-wrap">I1341</span></div>
+             <div class="menu-item-cell"><span class="text-wrap">Hakuna Matana</span></div>
+             <div class="menu-item-cell"><span class="text-wrap">Shom Nath</span></div>
+             <div class="menu-item-cell"><span class="text-wrap">12/04/2025</span></div>
+             <div class="menu-item-cell"><span class="text-wrap">MAin</span></div>
+             <div class="menu-item-cell"><span class="text-wrap">Pending</span></div>
              
              <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
            </div>

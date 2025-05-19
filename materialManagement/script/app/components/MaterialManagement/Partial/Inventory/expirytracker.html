@@ -55,30 +55,67 @@
                   <div class="form-grid-item create-indent">
                     
                     <div class="form-input-wrapper">
-                      <label>expiry</label>
-                      <select>
-                        <option>Raw</option>
-                        <option>Sellable</option>
-                      </select>                    
+                      <label>Expiry</label>
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "Raw"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            Raw
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Sellable
+                     </div>
+                    </div>
+                     </div>                          
                     </div>
                   
                       
                    
                     <div class="form-input-wrapper">
                       <label>Category</label>
-                      <select>
-                        <option>Return</option>
-                        <option>Replacement</option>
-                      </select>                   
+                      <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                        <span>{{ selectedItem1 || "Veg"  }}</span>
+                        <span class="material-icons arrow-icon">
+                          {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                        </span>                        </div>
+                      <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                        <input type="text" ng-model="searchText" placeholder="Search...">
+                        <div class="dropdown-option-custom">
+                          
+                          Veg
+                        </div>
+                        <div class="dropdown-option-custom">
+                          Replacement
+                   
+                  </div>
+                   </div>                   
                      </div>
                    
                     
                       <div class="form-input-wrapper">
                         <label>Expiry Within</label>
-                        <select>
-                            <option>15</option>
-                            <option>30</option>
-                          </select>                  </div>
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                          <span>{{ selectedItem1 || "15"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                           15
+                          </div>
+                          <div class="dropdown-option-custom">
+                            12
+                     
+                    </div>
+                     </div>                   </div>
                   </div>
                   
               
@@ -170,7 +207,7 @@
                   </div>
                   <div class="ssa-container" style="display: flex; justify-content: center; align-items: center;">
                     <div class="ssa-actions" style="text-align: center;">
-                      <button class="ssa-btn ssa-btn-cancel">Batch Disposal</button>
+                      <button class="ssa-btn ssa-btn-cancel" ng-click="showOutletModal = true">Batch Disposal</button>
                       <button class="ssa-btn ssa-btn-save">Transfer</button>
                       <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
                         <!-- Trigger Button -->
@@ -185,7 +222,7 @@
       </div>
    </diV>
   
-  <div id="returnReplacementPopup" ng-show="false">
+  <div id="returnReplacementPopup" ng-show="showOutletModal">
     <div class="popup-content" style="min-width: 900px;">
       <h3>Transfer Item</h3>
       <div class="popupexpiry-table-wrapper">
@@ -296,7 +333,7 @@
   
         <div class="popup-buttons full-width">
           
-          <button>Transfer</button>
+          <button ng-click="showOutletModal = false">Transfer</button>
         </div>
       </div>
     </div>

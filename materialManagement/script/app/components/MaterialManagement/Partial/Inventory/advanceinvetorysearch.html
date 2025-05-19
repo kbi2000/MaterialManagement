@@ -36,24 +36,62 @@
                   <div class="form-grid-item create-indent">
                     <div class="form-input-wrapper">
                       <label>Store Name</label>
-                      <select>
-                        <option>H.k Store</option>
-                        <option>K.p</option>
-
-                      </select>                    </div>
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "F&B"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            F&B
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Ravi & Co
+                     </div>
+                    </div>
+                     </div>                       </div>
                     <div class="form-input-wrapper">
                       <label>Item Name</label>
-                      <select>
-                        <option>Maggie</option>
-                        <option>Milk</option>
-                      </select>                    
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                          <span>{{ selectedItem1 || "Maggie"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            Maggie
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Milk
+                     </div>
+                    </div>
+                     </div>                      
                     </div>
                     <div class="form-input-wrapper">
                         <label>Category</label>
-                        <select>
-                            <option>Veg</option>
-                            <option>Non Veg</option>
-                          </select>                      </div>
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || "Veg"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                              
+                              Veg
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Non-Veg
+                       </div>
+                      </div>
+                       </div>                       </div>
                       <div class="form-input-wrapper">
                         <label>From</label>
                         <input type="date" value="" />
@@ -64,17 +102,42 @@
                       </div>
                       <div class="form-input-wrapper">
                         <label>Vendor</label>
-                        <select>
-                          <option>One</option>
-                          <option>Two</option>
-                        </select>
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || " Resturant 1 "  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                                 Resturant 1
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Resturant 2
+  
+                       </div>
+                      </div>
+                       </div>      
                       </div>
                       <div class="form-input-wrapper">
                         <label>UOM</label>
-                        <select>
-                            <option>K.G</option>
-                            <option>F.P</option>
-                          </select> 
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || "KG"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                                 KG
+                            </div>
+                            <div class="dropdown-option-custom">
+                            CM
+                       </div>
+                      </div>
+                       </div>
                       </div>
                       <div class="form-input-wrapper">
                         <label>Batch No</label>
@@ -88,20 +151,42 @@
                      </div>
                     <div class="form-input-wrapper">
                       <label>Consumtion Method</label>
-                      <select>
-                        <option>FIFO</option>
-                        <option>WAM</option>
-                      </select>
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                          <span>{{ selectedItem1 || "FIFO"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                               FIFO
+                          </div>
+                          <div class="dropdown-option-custom">
+                          CM
+                     </div>
+                    </div>
+                     </div>
                     </div>
                     <div class="form-input-wrapper">
-                        <label>Stock Status</label>
-                        <select>
-                            <option>In Stock</option>
-                            <option>Out of Stock</option>
-                            <option>Below Order Level</option>
-                          </select>
-                    
-                       </div>
+                      <label>Status Request</label>
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                          <span>{{ selectedItem1 || "Out Of Stock"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            Out Of Stock
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Sellable
+                     </div>
+                    </div>
+                     </div>     
+                    </div>
                   </div>
               
                   <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">

@@ -2,7 +2,7 @@
     <top-bar></top-bar>
   
       <div class="ssa-container">
-          <div class="ssa-title">Pending Delivery</div>
+          <div class="ssa-title">Pending Deliveries</div>
           <div class="ssa-actions">
             <!-- <button class="ssa-btn ssa-btn-cancel">Reset</button> -->
               <button class="ssa-btn ssa-btn-save">
@@ -57,25 +57,65 @@
                     
                     <div class="form-input-wrapper">
                       <label>Vendor</label>
-                      <select>
-                        <option>Shanti Pvt Co</option>
-                        <option>Shakti lt co</option>
-                      </select>                    
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                          <span>{{ selectedItem1 || "Shanti Pvt Co"  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom">
+                            
+                            Shanti Pvt Co
+                          </div>
+                          <div class="dropdown-option-custom">
+                            Shakti lt co
+                     </div>
+                    </div>
+                     </div>                     
                     </div>
                      
                     <div class="form-input-wrapper">
                         <label>Store</label>
-                        <select>
-                          <option>Kitchen</option>
-                          <option>Main Store</option>
-                        </select>                    
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || "Kitchen"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                              
+                              Kitchen
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Main Store
+                       </div>
+                      </div>
+                       </div>                      
                       </div>
                     <div class="form-input-wrapper">
                         <label>Po Status</label>
-                        <select>
-                          <option>Pending</option>
-                          <option>hello</option>
-                        </select>                    
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype1()">
+                            <span>{{ selectedItem1 || "Pending"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype1 }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                              
+                              Pending
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Delivered
+                       </div>
+                      </div>
+                       </div> 
+                                          
                       </div>
                   
                       
@@ -87,12 +127,10 @@
                   </div>
                   
               
-                  <!-- <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                    <span>Item Details</span>
-                    <div>
-                        <button class="new-vendor"><i class="fas fa-plus"></i> Add</button>
-                    </div>
-                  </div> -->
+                  <div class="form-section-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span>Deliveries Details</span>
+                   
+                  </div>
                   
                   <div class="expiry-table-wrapper">
                     <div class="expiry-table Po-Approve">

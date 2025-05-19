@@ -4,13 +4,10 @@
       <div class="ssa-container">
           <div class="ssa-title">Issue Note</div>
           <div class="ssa-actions">
-            <button class="ssa-btn ssa-btn-save">
-                 Submit Desion
+            <button class="ssa-btn ssa-btn-save" style="padding: 14px 18px;">
+              Print
               </button>
-              <button class="ssa-btn ssa-btn-save">
-                Reset
-              </button>
-            <button class="ssa-btn ssa-btn-cancel">Cancel</button>
+              
            
             
           </div>
@@ -43,24 +40,26 @@
                       <input type="date" value="" />                                      
                     </div>
                     <div class="form-input-wrapper">
-                        <label>Requestor Name</label>
-                        <input type="text" value="Sumit Sham" />
-                      </div>
-                      <div class="form-input-wrapper">
-                        <label>Indent No.</label>
-                        <input type="text" value="12345" />
-                      </div>
-                   
+                      <label>Indent No.</label>
+                      <input type="text" value="12345" />
+                    </div>
                     <div class="form-input-wrapper">
                       <label>Requesting Store</label>
                       <input type="text" value="12345" />              
                      </div>
                     <div class="form-input-wrapper">
+                        <label>Requestor Name</label>
+                        <input type="text" value="Sumit Sham" />
+                      </div>
+                     
+                   
+                  
+                    <div class="form-input-wrapper">
                       <label>Supplier Store</label>
                       <input type="text" value="UK" />              
                     </div>
                     <div class="form-input-wrapper">
-                        <label>Approve By</label>
+                        <label>Approved By</label>
                         <input type="text" value="DK" />              
                       </div>
                   </div>
@@ -75,7 +74,7 @@
                       <div class="issue-note-row issue-note-header">
                         <!-- <div class="issue-note-cell issue-note-checkbox"><input type="checkbox" /></div> -->
                         <div class="issue-note-cell" style="min-width: 100px;"> 
-                          <span>Serial No.</span>
+                          <span>S. No.</span>
                           
                         </div>
                         <div class="issue-note-cell"> 
@@ -98,7 +97,13 @@
                         </div>
                         <div class="issue-note-cell">
                           <span> 
-                           Qty Requested
+                           Qty 
+                          </span>
+                        
+                        </div>
+                        <div class="issue-note-cell">
+                          <span> 
+                            Batch No. (FIFO) 
                           </span>
                         
                         </div>
@@ -129,9 +134,11 @@
                             <option>Panner</option>
                           </select> 
                         </span></div>
-                        <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="Veg" />
+                        <div class="issue-note-cell"><span class="text-wrap">                        <input  style="width: 80px;" type="text" value="Veg" />
                         </span></div>
                         <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="Kg" />
+                        </span></div>
+                        <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="45" />
                         </span></div>
                         <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="45" />
                         </span></div>
@@ -156,6 +163,8 @@
                         </span></div>
                         <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="45" />
                         </span></div>
+                        <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="45" />
+                        </span></div>
                         <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="15" />
                         </span></div>
                         <div class="issue-note-cell"><span class="text-wrap">                        <input style="width: 80px;" type="text" value="25" />
@@ -171,6 +180,12 @@
                  
               
                   </div>
+                  <div class="" style="margin-top: 20px; display: flex; justify-content: flex-end;margin-right: 55px;">
+                    <label class="Purchase-lable" style="font-size: 14px;">
+                      Total Value: <span style="margin-left: 10px; font-weight: 400;">234</span>
+                    </label>
+                  </div>
+                  
                   <div class="form-section-header"></div>
                   <div class="form-grid-item create-indent">
                     <div class="form-input-wrapper">

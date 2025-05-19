@@ -1,6 +1,8 @@
 app.controller('ConfigurationController', function($scope, $document,$location) {
   $scope.vendorName = '';
   $scope.showErrors = false;
+  $scope.showOutletModal = false;
+
 
   $scope.submitForm = function () {
     $scope.showErrors = true;
@@ -43,6 +45,13 @@ $scope.goToaddRecipe= function() {
 $scope.goToaddRecipe= function() {
   $location.path('/AddRecipe');
 };
+$scope.goToCreateIndent = function() {
+  $location.path('/createindent');
+};
+$scope.goToPOView= function(){
+  $location.path('/PoView')
+}
+
 
 
     $scope.selectTab = function(tab) {
@@ -112,6 +121,8 @@ $scope.toggleFilterPanel = function () {
         renderer: statusRenderer,
         readOnly: true
       }    ];
+      
+      
       function statusRenderer(instance, td, row, col, prop, value, cellProperties) {
         Handsontable.renderers.TextRenderer.apply(this, arguments); 
       
@@ -131,6 +142,82 @@ $scope.toggleFilterPanel = function () {
         td.style.textAlign = 'center';
         td.appendChild(btn);
       }
+      $scope.dropdownOpen = false;
+
+      $scope.options = [
+        { name: 'Apple', selected: false },
+        { name: 'Banana', selected: false },
+        { name: 'Orange', selected: false },
+        { name: 'Mango', selected: false },
+        { name: 'Pineapple', selected: false },
+        { name: 'Watermelon', selected: false }
+      ];
+      $scope.store = [
+        { name: 'Delhi', selected: false },
+        { name: 'Kolkata', selected: false },
+    
+      ];
+      $scope.issuenote = [
+        { name: '1234', selected: false },
+        { name: '2345', selected: false },
+    
+      ];
+
+      $scope.toggleDropdown = function() {
+        $scope.dropdownOpen = !$scope.dropdownOpen;
+      };
+
+      $scope.getSelectedItems = function() {
+        return $scope.options.filter(opt => opt.selected).map(opt => opt.name);
+      };
+      $scope.getSelectedStore = function() {
+        return $scope.store.filter(opt => opt.selected).map(opt => opt.name);
+      };
+
+      // Close dropdown on click outside
+      $document.on('click', function(event) {
+        const target = angular.element(event.target);
+        if (!target.closest('.selecto-eleganza').length) {
+          $scope.$apply(() => $scope.dropdownOpen = false);
+        }
+      });
+      $scope.dropdownItemCategory = [ 'Equipment', 'Food'];
+      $scope.dropdownItemType = [ 'Raw', 'Sellable'];
+      $scope.issuenote = [ '1234', '2345'];
+
+
+
+      $scope.selectedItem = null;
+      $scope.dropdownOpen = false;
+
+      $scope.toggleDropdown = function () {
+        $scope.dropdownOpen = !$scope.dropdownOpen;
+      };
+      $scope.toggleDropdowntemtype = function () {
+        $scope.dropdownOpenitemtype = !$scope.dropdownOpenitemtype;
+      };
+
+      $scope.selectItem = function(item) {
+        $scope.selectedItem = item;
+        $scope.dropdownOpen = false;
+        $scope.dropdownOpenitemtype = false;
+        $scope.issuenote = false;
+
+
+      };
+
+      // Close dropdown when clicking outside
+      $document.on('click', function(event) {
+        if (!event.target.closest('.dropdown-wrapper')) {
+          $scope.$apply(() => {
+            $scope.dropdownOpen = false;
+            $scope.dropdownOpenitemtype = false;
+            $scope.issuenote = false;
+
+          });
+        }
+      });
+    
       
   });
   

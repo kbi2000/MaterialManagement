@@ -2,16 +2,38 @@
     <top-bar></top-bar>
        <div class="container">
            <div class="header">
-               <h2>Recipe <span class="count">(1142)</span></h2>
+            <div class="recipe-container">
+                <h2>
+                    Recipe Name: 
+                  </h2>
+                <div class="recipe-select-box" id="recipeSelectBox">
+                  <div class="recipe-select-item">Chocolate Cake</div>
+                  <div class="recipe-select-item">Pasta Alfredo</div>
+                  <div class="recipe-select-item">Grilled Cheese</div>
+                  <div class="recipe-select-item">Veggie Burger</div>
+                  <div class="recipe-select-item">Chocolate Cake</div>
+                  <div class="recipe-select-item">Chocolat</div>
+                  <div class="recipe-select-item">Pasta </div>
+                  <div class="recipe-select-item">Grilled Cheese</div>
+                  <div class="recipe-select-item"> Burger</div>
+                  <div class="recipe-select-item"> Cake</div>
+                
+                </div>
+               
+              </div>
                <div class="actions">
-                   <div class="search-box-main-page">
+                   <!-- <div class="search-box-main-page">
                        <i class="fas fa-search"></i>
                        <input type="text" placeholder="Search in Recipe">
-                   </div>
-                   <button class="new-vendor"  ng-click="goToaddRecipe()"><i class="fas fa-plus"></i> New Recipe</button>
+                   </div> -->
+                   <!-- ng-click="goToaddRecipe()" -->
+                   <button class="new-vendor" ng-click="goToaddRecipe()"  ><i class="fas fa-plus"></i> Add Recipe</button>
+                   <button class="new-vendor"  ><i class="fas fa-plus"></i> Add Item</button>
+                   <button class="new-vendor" ><i class="fas fa-plus"></i> Edit Item</button>
+
                    <div ng-controller="ConfigurationController" class="dropdown-wrapper">
                     <!-- Trigger Button -->
-                    <button class="more-options" ng-click="toggleDropdown($event)">⋯</button>
+                    <!-- <button class="more-options" ng-click="toggleDropdown($event)">⋯</button> -->
                   
                     <!-- Dropdown Menu -->
                     <div class="dropdown-menu" ng-show="showDropdown">
@@ -53,7 +75,7 @@
                
            </div>
        </div>
-       <div class="filter-container">
+       <!-- <div class="filter-container">
            <span class="filter-label">Quick Filters :</span>
            
            <button class="filter-button">Recently Added</button>
@@ -64,10 +86,10 @@
                filter_alt
                </span></span>
            <a href="#" class="clear-all">Clear All</a>
-       </div>
+       </div> -->
        <!-- table -->
         
-       <div class="tablebody">
+       <div class="tablebody" style="margin-top: 50px;">
        
          <div class="sidebar-table">
            <a href="#">ALL</a>
@@ -107,33 +129,25 @@
             <div class="recipe-item-cell recipe-item-checkbox"><input type="checkbox" /></div>
             <div class="recipe-item-cell"> 
               <span> Item Name</span>
-              <span>
-                <i class="fa fa-arrow-down" aria-hidden="true"></i>
-              </span>
+            
             </div>
             <div class="recipe-item-cell"> 
               <span> 
                 Category
               </span>
-              <span>
-                <i class="fa fa-arrow-down" aria-hidden="true"></i>
-              </span> 
+            
             </div>
             <div class="recipe-item-cell">
               <span> 
                Item Code
               </span>
-              <span>
-                <i class="fa fa-arrow-down" aria-hidden="true"></i>
-              </span> 
+            
             </div>
             <div class="recipe-item-cell">
               <span> 
                Qty
               </span>
-              <span>
-                <i class="fa fa-arrow-down" aria-hidden="true"></i>
-              </span>
+              
             </div>
             <div class="recipe-item-cell">
               <span> 
@@ -151,14 +165,101 @@
           <!-- Data Row Example -->
           <div class="recipe-item-row">
             <div class="recipe-item-cell recipe-item-checkbox"><input type="checkbox" /></div>
-            <div class="recipe-item-cell" style="color:#0078d4 ;"><span class="text-wrap">Premium Hospitality Goods LLC</span></div>
-            <div class="recipe-item-cell"><span class="text-wrap">Hakuna Matana</span></div>
-            <div class="recipe-item-cell"><span class="text-wrap">454454554</span></div>
-            <div class="recipe-item-cell"><span class="text-wrap">45</span></div>
-            <div class="recipe-item-cell"><span class="text-wrap">Kg</span></div>
+            <div class="recipe-item-cell" style="color:#0078d4 ;"><span class="text-wrap"> <select id="storeRef" disabled>
+                <option>Rice</option>
+                <option>Milk</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select id="storeRef" disabled>
+                <option>Veg</option>
+                <option>Non-Veg</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="P9786"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="76"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select disabled id="storeRef">
+                <option>Kg</option>
+                <option>Milk</option>
+              </select></span></div>
             
             <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
           </div>
+          <div class="recipe-item-row">
+            <div class="recipe-item-cell recipe-item-checkbox"><input type="checkbox" /></div>
+            <div class="recipe-item-cell" style="color:#0078d4 ;"><span class="text-wrap"> <select id="storeRef" disabled>
+                <option>Peas</option>
+                <option>Milk</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select id="storeRef" disabled>
+                <option>Gros</option>
+                <option>Non-Veg</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="P56"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="67"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select disabled id="storeRef">
+                <option>Kg</option>
+                <option>Milk</option>
+              </select></span></div>
+            
+            <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
+          </div>
+          <div class="recipe-item-row">
+            <div class="recipe-item-cell recipe-item-checkbox"><input type="checkbox" /></div>
+            <div class="recipe-item-cell" style="color:#0078d4 ;"><span class="text-wrap"> <select id="storeRef" disabled>
+                <option>Cardemon</option>
+                <option>Milk</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select id="storeRef" disabled>
+                <option>Spices</option>
+                <option>Non-Veg</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="P98"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="86"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select disabled id="storeRef">
+                <option>Kg</option>
+                <option>Milk</option>
+              </select></span></div>
+            
+            <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
+          </div>
+          <div class="recipe-item-row">
+            <div class="recipe-item-cell recipe-item-checkbox"><input type="checkbox" /></div>
+            <div class="recipe-item-cell" style="color:#0078d4 ;"><span class="text-wrap"> <select id="storeRef" disabled>
+                <option>Salt</option>
+                <option>Milk</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select id="storeRef" disabled>
+                <option>Spice</option>
+                <option>Non-Veg</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="9045"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="12"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select disabled id="storeRef">
+                <option>Kg</option>
+                <option>Milk</option>
+              </select></span></div>
+            
+            <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
+          </div>
+          <div class="recipe-item-row">
+            <div class="recipe-item-cell recipe-item-checkbox"><input type="checkbox" /></div>
+            <div class="recipe-item-cell" style="color:#0078d4 ;"><span class="text-wrap"> <select id="storeRef" disabled>
+                <option>Ghee</option>
+                <option>Milk</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select id="storeRef" disabled>
+                <option>Dairy</option>
+                <option>Non-Veg</option>
+              </select></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="P763"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><input disabled style="width: 80px; " value="34"></span></div>
+            <div class="recipe-item-cell"><span class="text-wrap"><select disabled id="storeRef">
+                <option>Lt</option>
+                <option>Milk</option>
+              </select></span></div>
+            
+            <!-- <div class="store-cell"><span class="store-status active">Active</span></div> -->
+          </div>
+
+          
          
           <!-- You can repeat the .vendor-row above for each vendor -->
         </div>

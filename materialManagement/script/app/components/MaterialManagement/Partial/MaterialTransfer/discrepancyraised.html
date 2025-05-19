@@ -33,7 +33,35 @@
             <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
               <div class="form-card-wrapper">
                   <div class="form-section-header"></div>
+                  
                   <div class="form-grid-item create-indent">
+                    <div class="form-input-wrapper">
+                      <label>Issue Note No.</label>
+                      <div class="dropdown-wrapper-custom">
+                        <div class="dropdown-header-custom" ng-click="toggleDropdown()">
+                          <span>{{ selectedItem || issuenote[0]  }}</span>
+                          <span class="material-icons arrow-icon">
+                            {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                          </span>                        </div>
+                        <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpen }">
+                          <input type="text" ng-model="searchText" placeholder="Search...">
+                          <div class="dropdown-option-custom"
+                               ng-repeat="item in issuenote | filter:searchText"
+                               ng-click="selectItem(item)">
+                            {{ item }}
+                          </div>
+                        </div>
+                      </div>            
+                    </div>
+                    <div class="form-input-wrapper">
+                      <label></label>
+
+                      <button class="ssa-btn ssa-btn-save" style="width: 30%; height: 100%;margin-top: 15px; display: block;;">
+                          Search
+                       </button>             
+                     </div>
+                     <div class="form-input-wrapper Markhide" style="align-items: center; display: flex; flex-direction: row; margin-left: auto;">
+                    </div>                     
                     <div class="form-input-wrapper">
                       <label>Issue Note No</label>
                       <input type="text" value="1234" />                   
@@ -64,46 +92,52 @@
                     <span>Item Received</span>
                   </div>
                   
-                  <div class="menu-item-table-wrapper">
-                    <div class="menu-item-table">
+                  <div class="item-indent-table-wrapper">
+                    <div class="item-indent-table">
                       <!-- Header Row -->
-                      <div class="menu-item-row menu-item-header">
-                        <!-- <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div> -->
-                        <div class="menu-item-cell" style="min-width: 100px;"> 
-                          <span>Serial No.</span>
+                      <div class="item-indent-row item-indent-header">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="min-width: 100px;"> 
+                          <span>S.No.</span>
                           
                         </div>
-                        <div class="menu-item-cell"> 
+                        <div class="item-indent-cell"> 
                           <span> 
                             Item Name
                           </span>
                         
                         </div>
-                        <div class="menu-item-cell">
+                        <div class="item-indent-cell"> 
+                          <span> 
+                            Batch No.
+                          </span>
+                        
+                        </div>
+                        <div class="item-indent-cell">
                           <span> 
                            Expected Qty
                           </span>
                        
                         </div>
-                        <div class="menu-item-cell">
+                        <div class="item-indent-cell">
                           <span> 
                            Received Qty
                           </span>
                          
                         </div>
-                        <div class="menu-item-cell">
+                        <div class="item-indent-cell">
                           <span> 
                            Discrepancy
                           </span>
                           
                         </div>
-                        <div class="menu-item-cell">
+                        <div class="item-indent-cell">
                           <span> 
                             Discrepancy Type
                           </span>
                          
                         </div>
-                        <div class="menu-item-cell">
+                        <div class="item-indent-cell">
                             <span> 
                                 Remarks
                             </span>
@@ -116,38 +150,42 @@
                       </div>
                   
                       <!-- Data Row Example -->
-                      <div class="menu-item-row">
-                        <!-- <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div> -->
-                        <div class="menu-item-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><select>
+                      <div class="item-indent-row">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">1</span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
                             <option>Rice</option>
                             <option>Milk</option>
                           </select></span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="34" />  </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="23" />  </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="98" />  </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><select>
+                          <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="4" />  </span></div>
+
+                        <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="34" />  </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="23" />  </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="98" />  </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
                             <option>Yes</option>
                             <option>No</option>
                           </select> </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap">                      <input style="width: 80px;" type="text" value="discrea" />                   
+                        <div class="item-indent-cell"><span class="text-wrap">                      <input style="width: 80px;" type="text" value="discrea" />                   
                         </span></div> 
                       </div>
-                      <div class="menu-item-row">
-                        <!-- <div class="menu-item-cell menu-item-checkbox"><input type="checkbox" /></div> -->
-                        <div class="menu-item-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><select>
+                      <div class="item-indent-row">
+                        <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
+                        <div class="item-indent-cell" style="color:#0078d4 ; min-width: 100px;"><span class="text-wrap">2</span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
                             <option>Rice</option>
                             <option>Milk</option>
                           </select></span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="4" />  </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="2" />  </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="8" />  </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap"><select>
+                          <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="4" />  </span></div>
+
+                        <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="4" />  </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="2" />  </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><input style="width: 80px;" type="text" value="8" />  </span></div>
+                        <div class="item-indent-cell"><span class="text-wrap"><select>
                             <option>Yes</option>
                             <option>No</option>
                           </select> </span></div>
-                        <div class="menu-item-cell"><span class="text-wrap">                      <input style="width: 80px;"type="text" value="discrea" />                   
+                        <div class="item-indent-cell"><span class="text-wrap">                      <input style="width: 80px;"type="text" value="discrea" />                   
                         </span></div> 
                       </div>  
                     

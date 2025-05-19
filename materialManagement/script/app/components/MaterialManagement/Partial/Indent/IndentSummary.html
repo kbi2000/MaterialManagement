@@ -46,30 +46,42 @@
                         <input type="date" value="" />
                       </div>
                       <div class="form-input-wrapper">
-                        <label>Previewd By</label>
-                        <input type="date" value="" />
+                        <label>Supplier Store</label>
+                        <input type="text" value="External Vendor" />
+                    
+                       </div>
+                      <div class="form-input-wrapper">
+                        <label>Reviewed By</label>
+                        <input type="text" value="" />
                       </div>
                       <div class="form-input-wrapper">
                         <label>Review Date</label>
                         <input type="date" value="" />
                       </div>
                    
-                    <div class="form-input-wrapper">
-                      <label>Supplier Store</label>
-                      <input type="text" value="External Vendor" />
                   
-                     </div>
+                      <div class="form-input-wrapper">
+                        <label>Status </label>
+                        <div class="dropdown-wrapper-custom">
+                          <div class="dropdown-header-custom" ng-click="toggleDropdowntemtype()">
+                            <span>{{ selectedItem1 || "Pending"  }}</span>
+                            <span class="material-icons arrow-icon">
+                              {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                            </span>                        </div>
+                          <div class="dropdown-content-custom" ng-class="{ 'show': dropdownOpenitemtype }">
+                            <input type="text" ng-model="searchText" placeholder="Search...">
+                            <div class="dropdown-option-custom">
+                              
+                              Pending
+                            </div>
+                            <div class="dropdown-option-custom">
+                              Sellable
+                       </div>
+                      </div>
+                       </div>     
+                      </div>
                     <div class="form-input-wrapper">
-                      <label>Status</label>
-                      <select>
-                        <option>Pending</option>
-                        <option>Sellable</option>
-                        <option>Rejected</option>
-
-                      </select>
-                    </div>
-                    <div class="form-input-wrapper">
-                        <label>Arroval Remaks</label>
+                        <label>Approver Remarks</label>
                         <input type="text" value="Yes" />
                     
                        </div>
@@ -114,7 +126,7 @@
                         </div>
                         <div class="item-indent-cell">
                             <span> 
-                                Approve
+                                Approved
                             </span>
                           
                           </div>
@@ -145,11 +157,11 @@
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">89</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> Yes
+                        <div class="item-indent-cell"><span class="text-wrap"> 97
                         </span></div>
                         <div class="item-indent-cell"><span class="text-wrap"> Approved
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">54 Item</span>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Out Of Stock</span>
                         </span></div>
                       </div>
                       <div class="item-indent-row">
@@ -161,11 +173,11 @@
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Lt</span></span></div>
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">54</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> Yes
+                        <div class="item-indent-cell"><span class="text-wrap"> 86
                         </span></div>
                         <div class="item-indent-cell"><span class="text-wrap"> Approved
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Lorem</span>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Limited Qty</span>
                         </span></div>
                       </div>  <div class="item-indent-row">
                         <!-- <div class="item-indent-cell item-indent-checkbox"><input type="checkbox" /></div> -->
@@ -176,11 +188,11 @@
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Kg</span></span></div>
                         <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">546</span>
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"> No
+                        <div class="item-indent-cell"><span class="text-wrap"> 76
                         </span></div>
                         <div class="item-indent-cell"><span class="text-wrap"> Approved
                         </span></div>
-                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">hello this</span>
+                        <div class="item-indent-cell"><span class="text-wrap"><span class="text-wrap">Out Of Stock</span>
                         </span></div>
                       </div>
                  

@@ -1,0 +1,228 @@
+<div ng-controller="ConfigurationController" >
+    <top-bar></top-bar>
+  
+      <div class="ssa-container">
+          <div class="responsive-wrapper" style="font-size: 13px; font-weight: bold; margin-top: 20px; display: flex; align-items: center;">Approved Indent:
+            <div class="selecto-eleganza" ng-class="{'active': dropdownOpen}">
+                <div class="select-box" ng-click="toggleDropdown()">
+                  <span>
+                    {{ getSelectedItems().length > 0 ? getSelectedItems().join(', ') : 'Select Indent' }}
+                  </span>
+                  <span class="material-icons arrow-icon">
+                    {{ dropdownOpen ? 'expand_less' : 'expand_more' }}
+                  </span>
+                </div>
+          
+                <div class="options-list">
+                  <div class="search-box-po">
+                    <input type="text" ng-model="searchText" placeholder="Search...">
+                  </div>
+                  <div>
+                    <label ng-repeat="item in options | filter:searchText">
+                      <input type="checkbox" ng-model="item.selected"> {{ item.name }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button class="ssa-btn ssa-btn-save ssa-btn-save-po" style="padding: 10px 12px; margin-left: 20px;">
+                <span class="material-symbols-outlined">
+                    Search
+                    </span> Search
+              </button>
+
+            </div>
+           
+          </div>
+          <div class="ssa-actions">
+            <!-- <button  class="ssa-btn ssa-btn-save" ng-click="goToIndentSummary()">
+                Save Draft
+              </button>
+            <button class="ssa-btn ssa-btn-save">
+                 Submit Request
+              </button>
+              
+              <button class="ssa-btn ssa-btn-save">
+                Reset
+              </button>
+            <button class="ssa-btn ssa-btn-cancel">Cancel</button> -->
+           
+            
+          </div>
+      </div>
+      <div  >
+          <div class="changale-tabs">
+            <!-- <div class="changale-tab"
+            ng-class="{active: selectedTabItem === 'items'}"
+            ng-click="selectTab('items')"></div> -->
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'vendor'}"
+                   ng-click="selectTab('vendor')">Vendor</div> -->
+                   
+             
+              <!-- <div class="changale-tab"
+                   ng-class="{active: selectedTabItem === 'settings'}"
+                   ng-click="selectTab('settings')">Settings</div> -->
+                  
+            </div>
+            <div class="changale-tab-content" ng-show="selectedTabItem === 'items'">
+              <div class="form-card-wrapper ">
+                  <div class="form-section-header"></div>
+                  <div class="my-collapse-box">
+                    <details>
+                      <summary>Vendor:ABC</summary>
+                      <p> 
+                        <div class="tax-summary-box">
+                            <!-- <h4>Tax & Total Summary</h4> -->
+                          
+                            <div class="tax-summary-row">
+                              <label class="tax-label">Change Vendor:</label>
+                              <select class="tax-select">
+                                <option>1234</option>
+                                <option>2345</option>
+                                <option>9876</option>
+                              </select>
+                            </div>
+                          
+                            <div class="tax-summary-row">
+                              <label class="tax-label">PO Currency:</label>
+                              <select class="tax-select">
+                                <option>INR</option>
+                                <option></option>
+                                <option></option>
+                              </select>
+                            </div>
+                          
+                            <div class="tax-summary-row">
+                              <label class="tax-label">Expected Delivery:</label>
+                              <input type="date" class="tax-input" />
+                            </div>
+                          
+                            <div class="tax-summary-row">
+                              <label class="tax-label">Payment Term:</label>
+                              <input type="date" class="tax-input" />
+                            </div>
+                          
+                           
+                          </div>
+                          <div class="expiry-table-wrapper">
+                            <div class="expiry-table">
+                              <!-- Header Row -->
+                              <div class="expiry-row expiry-header">
+                                <div class="expiry-cell expiry-checkbox"><input type="checkbox" /></div>
+                                <div class="expiry-cell"> 
+                                  <span>Item Code</span>
+                                 
+                                </div>
+                                <div class="expiry-cell"> 
+                                  <span> 
+                                    Item Name
+                                  </span>
+                                 
+                                </div>
+                                <div class="expiry-cell">
+                                  <span> 
+                                   Indent No.
+                                  </span>
+                                  
+                                </div>
+                                <div class="expiry-cell">
+                                  <span> 
+                                   Approved Qty
+                                  </span>
+                                  
+                                </div>
+                                <div class="expiry-cell">
+                                  <span> 
+                                   UOM
+                                  </span>
+                                  
+                                </div>
+                                <div class="expiry-cell">
+                                  <span> 
+                                   Rate
+                                  </span>
+                                  
+                                </div>
+                                <div class="expiry-cell">
+                                  <span> 
+                                   Approval
+                                  </span>
+                                  <span>
+                                    <!-- <i class="fa fa-arrow-down" aria-hidden="true"></i> -->
+                                  </span>
+                                </div>
+                              
+                                
+                                <!-- <div class="expiry-cell">Current Status</div> -->
+                                
+                              </div>
+                          
+                              <!-- Data Row Example -->
+                              <div class="expiry-row">
+                                <div class="expiry-cell expiry-checkbox"><input type="checkbox" /></div>
+                                <div class="expiry-cell" style="color:#0078d4 ;"><span class="text-wrap"> 2LLC</span></div>
+                                <div class="expiry-cell"><span class="text-wrap">Rice</span></div>
+                                <div class="expiry-cell"><span class="text-wrap">454454554</span></div>
+                                <div class="expiry-cell"><span class="text-wrap">23</span></div>
+                                <div class="expiry-cell"><span class="text-wrap">kg</span></div>
+                                <div class="expiry-cell"><span class="text-wrap">25</span></div>
+                                <div class="expiry-cell"><span class="text-wrap">Naer</span></div>
+        
+                                
+                                <!-- <div class="expiry-cell"><span class="expiry-status active">Active</span></div> -->
+                              </div>
+                             
+                              <!-- You can repeat the .vendor-row above for each vendor -->
+                            </div>
+                          </div>
+                         
+                        </p>
+                        <!-- <hr> -->
+                        <div class="ssa-container" style="display: flex; justify-content: center; align-items: center;">
+                          <div class="ssa-actions" style="text-align: center;">
+                            <button class="ssa-btn ssa-btn-cancel">Edit Item</button>
+                            <button class="ssa-btn ssa-btn-save">Preview PO</button>
+                            <button class="ssa-btn ssa-btn-save">Generate PO</button>
+
+                            <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
+                              <!-- Trigger Button -->
+                              <!-- Dropdown Menu -->
+                            </div>
+                          </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Vendor:DEF</summary>
+                        <p>This is uniquely styled collapse content.</p>
+                      </details>
+                  </div>
+                  <div class="ssa-container" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="ssa-actions" style="text-align: center;">
+                     
+                      <button class="ssa-btn ssa-btn-save" style="padding: 12px 12px;">Generate All PO</button>
+
+                      <div ng-controller="ConfigurationController" class="dropdown-wrapper" style="margin-top: 5px;">
+                        <!-- Trigger Button -->
+                        <!-- Dropdown Menu -->
+                      </div>
+                    </div>
+                  </div>
+                 
+              
+                 
+                  
+                 
+                  
+                
+                
+                
+                 
+                
+                  
+
+            </div>
+            
+            
+      </div>
+   </diV>
+   

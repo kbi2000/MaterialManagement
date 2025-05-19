@@ -74,6 +74,15 @@ app.controller('SidebarController', function ($scope,$location) {
     $scope.goTogrn=function(){
         $location.path('/grn')
     }
+    $scope.goToVendorInvice= function(){
+        $location.path('/vendorinvoiceentry')
+      }
+    $scope.goToPOIndent=function(){
+        $location.path('/poindent')
+    }
+    $scope.goToIndent=function(){
+        $location.path('/indentlist')
+    }
 
 
     $scope.toggleMenu = function (menu) {
